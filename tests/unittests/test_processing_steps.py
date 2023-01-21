@@ -11,7 +11,7 @@ To run this test requires the following step:
 
 import pytest
 
-from my_project.utilities import processing_steps
+from nhspy_plotthedots.utilities import processing_steps
 
 def test_derived_something():
     """
