@@ -1,3 +1,4 @@
+[![Python application](https://github.com/nhs-pycom/nhspy-plotthedots/actions/workflows/python-app.yml/badge.svg)](https://github.com/nhs-pycom/nhspy-plotthedots/actions/workflows/python-app.yml)
 # nhspy-plotthedots
 
 We are working with the NHS-R community to develop a python implementation of 'NHSRplotthedots' SPC package to support NHSE/I 'Making Data Count' programme
