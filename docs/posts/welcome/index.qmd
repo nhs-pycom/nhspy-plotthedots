@@ -17,5 +17,5 @@ We look forward to hearing your feedback on `nhspy-plotthedots` and hope you fin
 ::: {.callout-warning}
 ## Note
 
-This is an alpha release for testing, not for use in production analysis.
+This is an alpha release for testing, not for use in production.
 :::

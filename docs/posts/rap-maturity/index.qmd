@@ -1,7 +1,7 @@
 ---
 title: "RAP Maturity Framework"
 author: "Craig R Shenton"
-date: "2022-12-11"
+date: "2023-01-23"
 categories: [NHS, RAP]
 image: "nhsd-rap.png"
 description: "Lets make nhspy-plotthedots fully RAP complient"
@@ -10,9 +10,9 @@ title-block-banner: false
 
 ## The 'Levels of RAP' Maturity Framework
 
-Developed by [NHS Digital RAP community](https://nhsdigital.github.io/rap-community-of-practice/introduction_to_RAP/levels_of_RAP/).
+We are going to be developing `nhspy-plotthedots` in a Reproducible Analytical Pipeline (RAP) way by following the  maturity framework developed by [NHS Digital RAP community](https://nhsdigital.github.io/rap-community-of-practice/introduction_to_RAP/levels_of_RAP/).
 
-There are three levels:
+There are three levels to RAP:
 
 1. Baseline - **RAP fundamentals** offering resilience against future change.
 2. Silver - **Implementing best practice** by following good analytical and software engineering standards.
