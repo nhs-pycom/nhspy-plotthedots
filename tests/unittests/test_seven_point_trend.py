@@ -30,7 +30,7 @@ import unittest
 import numpy as np
 
 # Local
-from nhspy_plotthedots.utilities.special_cause_flag import seven_point_trend
+from nhspy_plotthedots.pandas_spc_calculations import seven_point_trend
 
 # Define tests
 # -------------------------------------------------------------------------
