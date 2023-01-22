@@ -9,7 +9,8 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Python application](https://github.com/nhs-pycom/nhspy-plotthedots/actions/workflows/python-app.yml/badge.svg)](https://github.com/nhs-pycom/nhspy-plotthedots/actions/workflows/python-app.yml)
+[![pytest+flake8](https://github.com/nhs-pycom/nhspy-plotthedots/actions/workflows/pytest_flake8.yml/badge.svg)](https://github.com/nhs-pycom/nhspy-plotthedots/actions/workflows/pytest_flake8.yml)
+[![codecov](https://codecov.io/gh/nhs-pycom/nhspy-plotthedots/branch/main/graph/badge.svg?token=WJUC4OBRLM)](https://codecov.io/gh/nhs-pycom/nhspy-plotthedots)
 [![Contributors][contributors-shield]][contributors-url]
 [![Code Lines][code-lines]][code-lines-url]
 [![Forks][forks-shield]][forks-url]
