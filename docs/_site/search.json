@@ -124,5 +124,33 @@
     "title": "Get Started",
     "section": "Build your first report",
     "text": "Build your first report"
+  },
+  {
+    "objectID": "documentation/pandas_spc_x_calc.html",
+    "href": "documentation/pandas_spc_x_calc.html",
+    "title": "pandas_spc_x_calc",
+    "section": "",
+    "text": "Under Development"
+  },
+  {
+    "objectID": "documentation/index.html",
+    "href": "documentation/index.html",
+    "title": "Documentation",
+    "section": "",
+    "text": "Under Development"
+  },
+  {
+    "objectID": "faq.html",
+    "href": "faq.html",
+    "title": "Frequently Asked Questions",
+    "section": "",
+    "text": "Under Development\n\n\n\n\n\n\n\nQuestion:"
+  },
+  {
+    "objectID": "tutorials/pandas.html",
+    "href": "tutorials/pandas.html",
+    "title": "Pandas",
+    "section": "",
+    "text": "Under Development"
   }
 ]
