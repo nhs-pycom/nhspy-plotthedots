@@ -1,0 +1,27 @@
+---
+title: "About {nhspy-plotthedots}"
+comments: false
+---
+
+## Authors
+
+- [Craig Robert Shenton, PhD](https://github.com/craig-shenton) `author`, `maintainer`.
+- [Tom Jemmett](https://github.com/tomjemmett) `author`.
+
+## Licence
+
+MIT License, see [`LICENSE.md`](https://github.com/nhs-pycom/nhspy-plotthedots/blob/main/LICENSE)
+
+## Citation
+
+NHS Python Community *nhspy-plotthedots: Draw XmR charts in python for NHSE 'Making Data Count' programme* (2023). At <[https://github.com/nhs-pycom/nhspy-plotthedots](https://github.com/nhs-pycom/nhspy-plotthedots)>.
+
+```r
+@Manual{nhspyplotthedots2023,
+  title  = {nhspy-plotthedots: Draw XmR charts in python for NHSE 'Making Data Count' programme},
+  author = {NHS Python Community},
+  url = {https://github.com/nhs-pycom/nhspy-plotthedots},
+  year = {2023},
+}
+```
+

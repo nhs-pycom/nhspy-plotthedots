@@ -9,10 +9,10 @@ from setuptools import find_packages, setup
 setup(
     name='nhspy-plotthedots',
     packages=find_packages(),
-    version='0.1.0',
+    version='0.1.6',
     description='Python SPC chart tool',
-    author='NHS_Python_Community',
-    license='',
+    author='NHS Python Community',
+    license='MIT',
     setup_requires=['pytest-runner','flake8'],
     tests_require=['pytest'],
 )

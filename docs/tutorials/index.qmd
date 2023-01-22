@@ -1,0 +1,40 @@
+---
+title: "Get Started"
+subtitle: "Check out the tutorials to learn the basics."  
+comments: false
+anchor-sections: false
+---
+
+::::: {.grid .step .column-page-right}
+
+:::: {.g-col-lg-3 .g-col-12}
+## Step 1 
+
+#### Fork RAPdown {.fw-light}
+::::
+
+:::: {.g-col-lg-6 .g-col-12}
+
+## Download the code locally
+
+Before getting started, you should [Fork this repository from github](https://github.com/nhs-pycom/nhspy-plotthedots/fork)
+
+::::
+
+:::::
+
+::::: {.grid .step .column-page-right}
+
+:::: {.g-col-lg-3 .g-col-12}
+## Step 2
+
+#### Run make() {.fw-light}
+::::
+
+:::: {.g-col-lg-6 .g-col-12}
+
+## Build your first report
+
+::::
+
+:::::

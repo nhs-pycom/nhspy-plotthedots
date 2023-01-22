@@ -1,0 +1,113 @@
+project:
+  type: website
+  # resources:
+  #   - "images/twitter-card.png"
+  #   - "course-materials/_slides/"
+    
+website:
+  open-graph: true
+  page-navigation: true
+  title: "nhspy-plotthedots"
+  description: "Draw XmR charts in python for NHSE 'Making Data Count' programme."
+  # date: now
+  favicon: _assets/favicons/favicon.ico
+  repo-url: https://github.com/nhs-pycom/nhspy-plotthedots
+  repo-actions: [edit, issue]
+  site-url: https://nhs-pycom.github.io/nhspy-plotthedots
+
+  page-footer:
+    left: "This page is built [Quarto](https://quarto.org/)."
+    # background: "#005eb8"
+    right:
+    - text: "License"
+      href: https://github.com/nhs-pycom/nhspy-plotthedots/blob/main/LICENSE
+    - text: "Code of Conduct"
+      href: https://github.com/nhs-pycom/nhspy-plotthedots/blob/main/CODE_OF_CONDUCT.md
+
+  navbar:
+    background: light
+    title: false
+    collapse-below: lg
+    left:
+      - text: "nhspy-plotthedots"
+        icon: "house-door"
+        href: index.qmd
+      - text: "Tutorials"
+        icon: "bookmark-check"
+        href: tutorials/index.qmd
+      - text: "Documentation"
+        icon: "file-earmark-text"
+        href: documentation/index.qmd
+      - text: "Updates"
+        icon: "rss"
+        href: updates.qmd
+    right:
+      - text: "Help"
+        menu:
+          - text: "About"
+            icon: "info-circle"
+            href: about.qmd
+          - text: "Report a Bug"
+            icon: "bug"
+            href: "https://github.com/nhs-pycom/nhspy-plotthedots/issues"
+          - text: "Ask a Question"
+            icon: "chat-right-text"
+            href: "https://github.com/nhs-pycom/nhspy-plotthedots/discussions"
+          - text: "FAQ"
+            icon: "question-circle"
+            href: faq.qmd
+      - icon: github
+        href: https://github.com/nhs-pycom/
+        aria-label: GitHub
+      - icon: cloud-fill
+        href: https://nhs-pycom.net/
+        aria-label: NHS Python Community
+  sidebar:
+    id: toc-side
+    style: "floating"
+    pinned: true
+    contents:
+      - text: "Homepage" 
+        file: index.qmd
+      - text: "Contribute to docs"
+        file: contribute.qmd
+      - section: Tutorials
+        file: tutorials/index.qmd
+        contents: 
+          - auto: tutorials/*.qmd
+      - section: Documentation
+        file: documentation/index.qmd
+        contents: 
+          - auto: documentation/*.qmd
+      - text: "FAQ"
+        file: faq.qmd
+      - text: "About"
+        file: about.qmd
+  comments:
+    giscus:
+      repo: nhs-pycom/nhspy-plotthedots
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    theme:
+      light: [cosmo, _assets/style/theme.scss]
+    code-copy: true
+    code-overflow: wrap
+    css: _assets/style/styles.css
+    include-after-body: _assets/style/js.html
+    # grid:
+    #   sidebar-width: 250px
+    #   body-width: 900px
+    #   margin-width: 300px
+    # # Code options
+    # code-tools:
+    #   source: false
+    #   toggle: false
+    #   caption: none
+    # code-fold: true
+    # code-summary: "Show code"
+    # code-copy: true
+    # code-overflow: wrap
+#      - icon: box-seam
+#        href: https://cloud.r-project.org/web/packages/

@@ -1,0 +1,35 @@
+---
+pagetitle: "nhspy-plotthedots"
+page-layout: custom
+section-divs: false
+toc: false
+css: index.css
+editor: source
+description: | 
+  Draw XmR charts in python for NHSE 'Making Data Count' programme.
+comments: false
+---
+
+:::: {.hero-banner}
+
+::: {.hero-image .hero-image-left}
+:::
+
+::: {.content-block}
+
+<h1>nhspy-plotthedots <span>v0.1.6 (alpha)</span></h1>
+
+### Draw XmR charts in python for NHSE 'Making Data Count' programme.
+
+::: {.hero-buttons}
+[Get started](tutorials/index.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
+<!-- [Read the docs](documentation/index.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
+[Latest](updates.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"} -->
+::: 
+
+:::
+
+::: {.hero-image .hero-image-right}
+:::
+
+::::

@@ -1,0 +1,21 @@
+---
+title: "nhspy-plotthedots alpha release"
+author: "Craig R Shenton"
+date: "2023-01-22"
+categories: [release]
+image: "thumbnail.png"
+description: "v0.1.6 (alpha) now available on test pipy"
+title-block-banner: false
+---
+
+We are excited to announce the release of `nhspy-plotthedots` alpha, version `0.1.6`. This new package is now available on test PyPI at [https://test.pypi.org/project/nhspy-plotthedots-test/](https://test.pypi.org/project/nhspy-plotthedots-test/) for users to test and provide feedback.
+
+In addition to the package release, the documentation site for nhspy-plotthedots is now live. This quarto site will provide detailed information on how to use the package, including installation instructions, usage examples, and API reference.
+
+We look forward to hearing your feedback on `nhspy-plotthedots` and hope you find it as useful as we do.
+
+::: {.callout-warning}
+## Note
+
+This is an alpha release for testing, not for use in production analysis.
+:::
