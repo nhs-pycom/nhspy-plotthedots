@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nhspy-plotthedots-test"
+version = "0.1.6"
+authors = [
+  { name="Craig R Shenton", email="craig.shenton@nhs.net" },
+  { name="Tom Jemmett", email="tom.jemmett@gmail.com" },
+]
+description = "nhspy-plotthedots: Draw XmR charts for NHSE 'Making Data Count' programme"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/nhs-pycom/nhspy-plotthedots"
+"Bug Tracker" = "https://github.com/nhs-pycom/nhspy-plotthedots/issues"
