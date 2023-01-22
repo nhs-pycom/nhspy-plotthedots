@@ -111,3 +111,6 @@ format:
     # code-overflow: wrap
 #      - icon: box-seam
 #        href: https://cloud.r-project.org/web/packages/
+
+execute:
+  freeze: auto
