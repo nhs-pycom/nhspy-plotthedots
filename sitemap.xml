@@ -1,39 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nhs-pycom.github.io/nhspy-plotthedots/documentation/index.html</loc>
-    <lastmod>2023-01-22T20:57:03.447Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nhs-pycom.github.io/nhspy-plotthedots/posts/welcome/index.html</loc>
-    <lastmod>2023-01-22T20:57:04.441Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nhs-pycom.github.io/nhspy-plotthedots/posts/rap-maturity/index.html</loc>
-    <lastmod>2023-01-22T20:57:05.331Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nhs-pycom.github.io/nhspy-plotthedots/contribute.html</loc>
-    <lastmod>2023-01-22T20:57:06.175Z</lastmod>
-  </url>
-  <url>
     <loc>https://nhs-pycom.github.io/nhspy-plotthedots/index.html</loc>
-    <lastmod>2023-01-22T20:57:09.720Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nhs-pycom.github.io/nhspy-plotthedots/about.html</loc>
-    <lastmod>2023-01-22T20:57:10.103Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nhs-pycom.github.io/nhspy-plotthedots/updates.html</loc>
-    <lastmod>2023-01-22T20:57:10.394Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nhs-pycom.github.io/nhspy-plotthedots/faq.html</loc>
-    <lastmod>2023-01-22T20:57:10.646Z</lastmod>
+    <lastmod>2023-01-22T22:01:42.558Z</lastmod>
   </url>
   <url>
     <loc>https://nhs-pycom.github.io/nhspy-plotthedots/tutorials/index.html</loc>
-    <lastmod>2023-01-22T20:57:10.899Z</lastmod>
+    <lastmod>2023-01-22T22:01:43.482Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nhs-pycom.github.io/nhspy-plotthedots/tutorials/pandas.html</loc>
+    <lastmod>2023-01-22T22:01:43.946Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nhs-pycom.github.io/nhspy-plotthedots/documentation/pandas_spc_x_calc.html</loc>
+    <lastmod>2023-01-22T22:01:44.379Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nhs-pycom.github.io/nhspy-plotthedots/documentation/index.html</loc>
+    <lastmod>2023-01-22T22:01:44.787Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nhs-pycom.github.io/nhspy-plotthedots/faq.html</loc>
+    <lastmod>2023-01-22T22:01:45.231Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nhs-pycom.github.io/nhspy-plotthedots/updates.html</loc>
+    <lastmod>2023-01-22T22:01:45.795Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nhs-pycom.github.io/nhspy-plotthedots/contribute.html</loc>
+    <lastmod>2023-01-22T22:01:46.799Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nhs-pycom.github.io/nhspy-plotthedots/posts/rap-maturity/index.html</loc>
+    <lastmod>2023-01-22T22:01:47.635Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nhs-pycom.github.io/nhspy-plotthedots/posts/welcome/index.html</loc>
+    <lastmod>2023-01-22T22:01:48.839Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nhs-pycom.github.io/nhspy-plotthedots/about.html</loc>
+    <lastmod>2023-01-22T22:01:49.551Z</lastmod>
   </url>
 </urlset>

@@ -1,10 +1,101 @@
 [
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "nhspy-plotthedots alpha release",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "nhspy-plotthedots",
     "section": "",
-    "text": "We are excited to announce the release of nhspy-plotthedots alpha, version 0.1.6. This new package is now available on test PyPI at https://test.pypi.org/project/nhspy-plotthedots-test/ for users to test and provide feedback.\nIn addition to the package release, the documentation site for nhspy-plotthedots is now live. This quarto site will provide detailed information on how to use the package, including installation instructions, usage examples, and API reference.\nWe look forward to hearing your feedback on nhspy-plotthedots and hope you find it as useful as we do.\n\n\n\n\n\n\nNote\n\n\n\nThis is an alpha release for testing, not for use in production."
+    "text": "Read the Docs\nWelcome to the NHS Python Community’s python version of the NHS-Rplotthedots package.\nThe NHSR Plot the Dots package was built by the NHS-R community to provide tools for drawing statistical process control (SPC) charts. The package supports the NHS England programme ‘Making Data Count’. The programme encourages boards, managers, and analyst teams to present data in ways that show change over time, and drive better understanding of indicators than ‘RAG’ (red, amber, green) rated reports often present."
+  },
+  {
+    "objectID": "index.html#quick-start",
+    "href": "index.html#quick-start",
+    "title": "nhspy-plotthedots",
+    "section": "Quick Start",
+    "text": "Quick Start\nBelow is a simple example of the type of chart the package produces. We will use the ae_attendances dataset from the NHSRdatasets package and a bit of pandas code to select some organisations.\n\nInstall and load some libraries\n\n# Install libs from test PIPY\n%pip install --index-url https://test.pypi.org/simple/ --no-deps nhspy-plotthedots-test\n\n# Import libs\nimport pandas as pd\nfrom datetime import datetime\nimport plotly.io as pio\npio.renderers.default = \"plotly_mimetype+notebook\"\n\nLooking in indexes: https://test.pypi.org/simple/\nRequirement already satisfied: nhspy-plotthedots-test in /opt/homebrew/lib/python3.10/site-packages (0.1.6)\n\n\nNote: you may need to restart the kernel to use updated packages.\n\n\n\n\nLoad the data into pandas\n\n# File path of the CSV file\nurl = 'https://raw.githubusercontent.com/nhs-pycom/nhspy-plotthedots/main/nhspy_plotthedots/data/ae_attendances.csv'\n\n# Read the CSV file and store it in a DataFrame\ndf = pd.read_csv(url)\n\n# Convert 'period' column to datetime format\ndf['period'] = pd.to_datetime(df['period'])\n\n# Create a subset of the DataFrame based on certain conditions\nsub_set = df[(df['org_code'] == \"RQM\") & (df['type'] == \"1\") & (df['period'] < datetime(2018, 4, 1))]\nsub_set = sub_set.sort_values(by='period').reset_index(drop=True)\n\nsub_set.head()\n\n\n\n\n\n  \n    \n      \n      period\n      org_code\n      type\n      attendances\n      breaches\n      admissions\n    \n  \n  \n    \n      0\n      2016-04-01\n      RQM\n      1\n      15154\n      1199\n      3415\n    \n    \n      1\n      2016-05-01\n      RQM\n      1\n      16705\n      929\n      3590\n    \n    \n      2\n      2016-06-01\n      RQM\n      1\n      16021\n      970\n      3398\n    \n    \n      3\n      2016-07-01\n      RQM\n      1\n      16761\n      1178\n      3321\n    \n    \n      4\n      2016-08-01\n      RQM\n      1\n      15084\n      1110\n      3198\n    \n  \n\n\n\n\n\n\nCalculate the control limits\n\nfrom nhspy_plotthedots import pandas_spc_calculations\n\n# calculate control limits\nspc = pandas_spc_calculations.pandas_spc_x_calc(sub_set, 'breaches')\nspc.head()\n\n\n\n\n\n  \n    \n      \n      period\n      org_code\n      type\n      attendances\n      breaches\n      admissions\n      mean\n      lpl\n      upl\n      outside_limits\n      relative_to_mean\n      close_to_limits\n      special_cause_flag\n    \n  \n  \n    \n      0\n      2016-04-01\n      RQM\n      1\n      15154\n      1199\n      3415\n      1545.166667\n      740.395758\n      2349.937576\n      False\n      -1.0\n      False\n      False\n    \n    \n      1\n      2016-05-01\n      RQM\n      1\n      16705\n      929\n      3590\n      1545.166667\n      740.395758\n      2349.937576\n      False\n      -1.0\n      True\n      True\n    \n    \n      2\n      2016-06-01\n      RQM\n      1\n      16021\n      970\n      3398\n      1545.166667\n      740.395758\n      2349.937576\n      False\n      -1.0\n      True\n      True\n    \n    \n      3\n      2016-07-01\n      RQM\n      1\n      16761\n      1178\n      3321\n      1545.166667\n      740.395758\n      2349.937576\n      False\n      -1.0\n      False\n      False\n    \n    \n      4\n      2016-08-01\n      RQM\n      1\n      15084\n      1110\n      3198\n      1545.166667\n      740.395758\n      2349.937576\n      False\n      -1.0\n      False\n      False\n    \n  \n\n\n\n\n\n\nPlot the plotly SPC chart\n\nfrom nhspy_plotthedots import plotly_spc_chart\n\n# plot SPC chart\nplotly_spc_chart.plotly_spc_chart(spc, 'breaches', 'period', plot_title = 'Chelsea & Westminster Hospital NHS Foundation Trust (RQM)', x_lab = 'Month of attendance', y_lab = 'Number of 4-Hour Target Breaches')\n\n\n\n                                                \nFigure 1: Number of A&E attendance 4-Hour Breaches"
+  },
+  {
+    "objectID": "index.html#nhs-r-slack",
+    "href": "index.html#nhs-r-slack",
+    "title": "nhspy-plotthedots",
+    "section": "NHS-R slack",
+    "text": "NHS-R slack\nIf you want to learn more about this project, please join the discussion at the NHS-R Community Slack group and the specific channel #proj-nhsr-plot-the-dots."
+  },
+  {
+    "objectID": "tutorials/index.html",
+    "href": "tutorials/index.html",
+    "title": "Get Started",
+    "section": "",
+    "text": "Under Development"
+  },
+  {
+    "objectID": "tutorials/index.html#step-1",
+    "href": "tutorials/index.html#step-1",
+    "title": "Get Started",
+    "section": "Step 1",
+    "text": "Step 1\n\nFork package"
+  },
+  {
+    "objectID": "tutorials/index.html#download-the-code-locally",
+    "href": "tutorials/index.html#download-the-code-locally",
+    "title": "Get Started",
+    "section": "Download the code locally",
+    "text": "Download the code locally\nBefore getting started, you should Fork this repository from github"
+  },
+  {
+    "objectID": "tutorials/index.html#step-2",
+    "href": "tutorials/index.html#step-2",
+    "title": "Get Started",
+    "section": "Step 2",
+    "text": "Step 2\n\nRun make()"
+  },
+  {
+    "objectID": "tutorials/index.html#build-your-first-report",
+    "href": "tutorials/index.html#build-your-first-report",
+    "title": "Get Started",
+    "section": "Build your first report",
+    "text": "Build your first report"
+  },
+  {
+    "objectID": "tutorials/pandas.html",
+    "href": "tutorials/pandas.html",
+    "title": "Pandas",
+    "section": "",
+    "text": "Under Development"
+  },
+  {
+    "objectID": "documentation/pandas_spc_x_calc.html",
+    "href": "documentation/pandas_spc_x_calc.html",
+    "title": "pandas_spc_x_calc",
+    "section": "",
+    "text": "Under Development"
+  },
+  {
+    "objectID": "documentation/index.html",
+    "href": "documentation/index.html",
+    "title": "Documentation",
+    "section": "",
+    "text": "Under Development"
+  },
+  {
+    "objectID": "faq.html",
+    "href": "faq.html",
+    "title": "Frequently Asked Questions",
+    "section": "",
+    "text": "Under Development\n\n\n\n\n\n\n\nQuestion:"
+  },
+  {
+    "objectID": "updates.html",
+    "href": "updates.html",
+    "title": "Updates",
+    "section": "",
+    "text": "RAP Maturity Framework\n\n\n\n\n\n\n\nNHS\n\n\nRAP\n\n\n\n\nLets make nhspy-plotthedots fully RAP complient\n\n\n\n\n\n\nJan 23, 2023\n\n\nCraig R Shenton\n\n\n\n\n\n\n  \n\n\n\n\nnhspy-plotthedots alpha release\n\n\n\n\n\n\n\nrelease\n\n\n\n\nv0.1.6 (alpha) now available on test pipy\n\n\n\n\n\n\nJan 22, 2023\n\n\nCraig R Shenton\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "contribute.html",
+    "href": "contribute.html",
+    "title": "Contribute to the docs",
+    "section": "",
+    "text": "git checkout -b <branch-name>\n\n\n\nTo the .qmd file add a YAML header with a title and subtitle.\n---\ntitle: Contribute to the docs\nsubtitle: \"How to add a new page to the documentations site using Quarto?\"\n---\n\n\n\nOpen the _quarto.yml configuration file and find the sidebar config code.\nsidebar:\n  - id: nav\n    style: \"floating\"\n    collapse-level: 3\n    align: left\n    contents:\nUnder the contents: object add a new section (if required), a string lable for your page, and a link to the .qmd file itself.\n- section: \"tutorials\"\n  contents:\n    - text: \"Reproducible Analytical Pipelines\"\n      file: tutorials/intro-to-rap.qmd\n\n\n\n\n\n\n\n\n\nRender Quarto before publishing\n\n\n\n\n\nRemember to render your changes locally using R-Studio (or VScode) before publishing\n\n\n\nCommit your changes locally\ngit commit -m 'Added new page to docs'\nThen push your changes to the remote branch\ngit push origin <branch-name>\nFinally, open a Pull Request (PR) https://github.com/nhs-pycom/nhspy-plotthedots/pulls"
   },
   {
     "objectID": "posts/rap-maturity/index.html",
@@ -35,32 +126,11 @@
     "text": "Gold RAP - analysis as a product\nMeeting all of the above requirements, plus:\n\nCode is fully packaged.\nRepository automatically runs tests etc. via CI/CD or a different integration/deployment tool e.g. GitHub Actions.\nProcess runs based on event-based triggers (e.g., new data in database) or on a schedule.\nChanges to the RAP are clearly signposted. E.g. a changelog in the package, releases etc. (See gov.uk info on Semantic Versioning)"
   },
   {
-    "objectID": "contribute.html",
-    "href": "contribute.html",
-    "title": "Contribute to the docs",
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "nhspy-plotthedots alpha release",
     "section": "",
-    "text": "git checkout -b <branch-name>\n\n\n\nTo the .qmd file add a YAML header with a title and subtitle.\n---\ntitle: Contribute to the docs\nsubtitle: \"How to add a new page to the documentations site using Quarto?\"\n---\n\n\n\nOpen the _quarto.yml configuration file and find the sidebar config code.\nsidebar:\n  - id: nav\n    style: \"floating\"\n    collapse-level: 3\n    align: left\n    contents:\nUnder the contents: object add a new section (if required), a string lable for your page, and a link to the .qmd file itself.\n- section: \"tutorials\"\n  contents:\n    - text: \"Reproducible Analytical Pipelines\"\n      file: tutorials/intro-to-rap.qmd\n\n\n\n\n\n\n\n\n\nRender Quarto before publishing\n\n\n\n\n\nRemember to render your changes locally using R-Studio (or VScode) before publishing\n\n\n\nCommit your changes locally\ngit commit -m 'Added new page to docs'\nThen push your changes to the remote branch\ngit push origin <branch-name>\nFinally, open a Pull Request (PR) https://github.com/nhs-pycom/nhspy-plotthedots/pulls"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "nhspy-plotthedots",
-    "section": "",
-    "text": "Read the Docs\nWelcome to the NHS Python Community’s python version of the NHS-Rplotthedots package.\nThe NHSR Plot the Dots package was built by the NHS-R community to provide tools for drawing statistical process control (SPC) charts. The package supports the NHS England programme ‘Making Data Count’. The programme encourages boards, managers, and analyst teams to present data in ways that show change over time, and drive better understanding of indicators than ‘RAG’ (red, amber, green) rated reports often present."
-  },
-  {
-    "objectID": "index.html#quick-start",
-    "href": "index.html#quick-start",
-    "title": "nhspy-plotthedots",
-    "section": "Quick Start",
-    "text": "Quick Start\nBelow is a simple example of the type of chart the package produces. We will use the ae_attendances dataset from the NHSRdatasets package and a bit of pandas code to select some organisations.\n\nInstall and load some libraries\n\n# Install libs from test PIPY\n%pip install --index-url https://test.pypi.org/simple/ --no-deps nhspy-plotthedots-test\n\n# Import libs\nimport pandas as pd\nfrom datetime import datetime\nimport plotly.io as pio\npio.renderers.default = \"plotly_mimetype+notebook\"\n\nLooking in indexes: https://test.pypi.org/simple/\nRequirement already satisfied: nhspy-plotthedots-test in /opt/homebrew/lib/python3.10/site-packages (0.1.6)\n\n\nNote: you may need to restart the kernel to use updated packages.\n\n\n\n\nLoad the data into pandas\n\n# File path of the CSV file\nurl = 'https://raw.githubusercontent.com/nhs-pycom/nhspy-plotthedots/main/nhspy_plotthedots/data/ae_attendances.csv'\n\n# Read the CSV file and store it in a DataFrame\ndf = pd.read_csv(url)\n\n# Convert 'period' column to datetime format\ndf['period'] = pd.to_datetime(df['period'])\n\n# Create a subset of the DataFrame based on certain conditions\nsub_set = df[(df['org_code'] == \"RQM\") & (df['type'] == \"1\") & (df['period'] < datetime(2018, 4, 1))]\nsub_set = sub_set.sort_values(by='period').reset_index(drop=True)\n\nsub_set.head()\n\n\n\n\n\n  \n    \n      \n      period\n      org_code\n      type\n      attendances\n      breaches\n      admissions\n    \n  \n  \n    \n      0\n      2016-04-01\n      RQM\n      1\n      15154\n      1199\n      3415\n    \n    \n      1\n      2016-05-01\n      RQM\n      1\n      16705\n      929\n      3590\n    \n    \n      2\n      2016-06-01\n      RQM\n      1\n      16021\n      970\n      3398\n    \n    \n      3\n      2016-07-01\n      RQM\n      1\n      16761\n      1178\n      3321\n    \n    \n      4\n      2016-08-01\n      RQM\n      1\n      15084\n      1110\n      3198\n    \n  \n\n\n\n\n\n\nCalculate the control limits\n\nfrom nhspy_plotthedots import pandas_spc_calculations\n\n# calculate control limits\nspc = pandas_spc_calculations.pandas_spc_x_calc(sub_set, 'breaches')\nspc.head()\n\n\n\n\n\n  \n    \n      \n      period\n      org_code\n      type\n      attendances\n      breaches\n      admissions\n      mean\n      lpl\n      upl\n      outside_limits\n      relative_to_mean\n      close_to_limits\n      special_cause_flag\n    \n  \n  \n    \n      0\n      2016-04-01\n      RQM\n      1\n      15154\n      1199\n      3415\n      1545.166667\n      740.395758\n      2349.937576\n      False\n      -1.0\n      False\n      False\n    \n    \n      1\n      2016-05-01\n      RQM\n      1\n      16705\n      929\n      3590\n      1545.166667\n      740.395758\n      2349.937576\n      False\n      -1.0\n      True\n      True\n    \n    \n      2\n      2016-06-01\n      RQM\n      1\n      16021\n      970\n      3398\n      1545.166667\n      740.395758\n      2349.937576\n      False\n      -1.0\n      True\n      True\n    \n    \n      3\n      2016-07-01\n      RQM\n      1\n      16761\n      1178\n      3321\n      1545.166667\n      740.395758\n      2349.937576\n      False\n      -1.0\n      False\n      False\n    \n    \n      4\n      2016-08-01\n      RQM\n      1\n      15084\n      1110\n      3198\n      1545.166667\n      740.395758\n      2349.937576\n      False\n      -1.0\n      False\n      False\n    \n  \n\n\n\n\n\n\nPlot the plotly SPC chart\n\nfrom nhspy_plotthedots import plotly_spc_chart\n\n# plot SPC chart\nplotly_spc_chart.plotly_spc_chart(spc, 'breaches', 'period', plot_title = 'Chelsea & Westminster Hospital NHS Foundation Trust (RQM)', x_lab = 'Month of attendance', y_lab = 'Number of 4-Hour Target Breaches')\n\n\n\n                                                \nFigure 1: Number of A&E attendance 4-Hour Breaches"
-  },
-  {
-    "objectID": "index.html#nhs-r-slack",
-    "href": "index.html#nhs-r-slack",
-    "title": "nhspy-plotthedots",
-    "section": "NHS-R slack",
-    "text": "NHS-R slack\nIf you want to learn more about this project, please join the discussion at the NHS-R Community Slack group and the specific channel #proj-nhsr-plot-the-dots."
+    "text": "We are excited to announce the release of nhspy-plotthedots alpha, version 0.1.6. This new package is now available on test PyPI at https://test.pypi.org/project/nhspy-plotthedots-test/ for users to test and provide feedback.\nIn addition to the package release, the documentation site for nhspy-plotthedots is now live. This quarto site will provide detailed information on how to use the package, including installation instructions, usage examples, and API reference.\nWe look forward to hearing your feedback on nhspy-plotthedots and hope you find it as useful as we do.\n\n\n\n\n\n\nNote\n\n\n\nThis is an alpha release for testing, not for use in production."
   },
   {
     "objectID": "about.html",
@@ -82,47 +152,5 @@
     "title": "About {nhspy-plotthedots}",
     "section": "Citation",
     "text": "Citation\nNHS Python Community nhspy-plotthedots: Draw XmR charts in python for NHSE ‘Making Data Count’ programme (2023). At <https://github.com/nhs-pycom/nhspy-plotthedots>.\n@Manual{nhspyplotthedots2023,\n  title  = {nhspy-plotthedots: Draw XmR charts in python for NHSE 'Making Data Count' programme},\n  author = {NHS Python Community},\n  url = {https://github.com/nhs-pycom/nhspy-plotthedots},\n  year = {2023},\n}"
-  },
-  {
-    "objectID": "updates.html",
-    "href": "updates.html",
-    "title": "Updates",
-    "section": "",
-    "text": "RAP Maturity Framework\n\n\n\n\n\n\n\nNHS\n\n\nRAP\n\n\n\n\nLets make nhspy-plotthedots fully RAP complient\n\n\n\n\n\n\nJan 23, 2023\n\n\nCraig R Shenton\n\n\n\n\n\n\n  \n\n\n\n\nnhspy-plotthedots alpha release\n\n\n\n\n\n\n\nrelease\n\n\n\n\nv0.1.6 (alpha) now available on test pipy\n\n\n\n\n\n\nJan 22, 2023\n\n\nCraig R Shenton\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "tutorials/index.html",
-    "href": "tutorials/index.html",
-    "title": "Get Started",
-    "section": "",
-    "text": "Under Development"
-  },
-  {
-    "objectID": "tutorials/index.html#step-1",
-    "href": "tutorials/index.html#step-1",
-    "title": "Get Started",
-    "section": "Step 1",
-    "text": "Step 1\n\nFork RAPdown"
-  },
-  {
-    "objectID": "tutorials/index.html#download-the-code-locally",
-    "href": "tutorials/index.html#download-the-code-locally",
-    "title": "Get Started",
-    "section": "Download the code locally",
-    "text": "Download the code locally\nBefore getting started, you should Fork this repository from github"
-  },
-  {
-    "objectID": "tutorials/index.html#step-2",
-    "href": "tutorials/index.html#step-2",
-    "title": "Get Started",
-    "section": "Step 2",
-    "text": "Step 2\n\nRun make()"
-  },
-  {
-    "objectID": "tutorials/index.html#build-your-first-report",
-    "href": "tutorials/index.html#build-your-first-report",
-    "title": "Get Started",
-    "section": "Build your first report",
-    "text": "Build your first report"
   }
 ]

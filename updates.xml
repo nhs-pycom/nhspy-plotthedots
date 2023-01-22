@@ -9,7 +9,7 @@
 <link>https://nhs-pycom.github.io/nhspy-plotthedots/updates.html</link>
 <atom:link href="https://nhs-pycom.github.io/nhspy-plotthedots/updates.xml" rel="self" type="application/rss+xml"/>
 <description>Draw XmR charts in python for NHSE &#39;Making Data Count&#39; programme.</description>
-<generator>quarto-1.2.280</generator>
+<generator>quarto-1.2.313</generator>
 <lastBuildDate>Mon, 23 Jan 2023 00:00:00 GMT</lastBuildDate>
 <item>
   <title>RAP Maturity Framework</title>
