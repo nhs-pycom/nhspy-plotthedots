@@ -1,0 +1,5 @@
+---
+title: "pandas_spc_x_calc"
+subtitle: "Calculates the SPC for a given DataFrame with a set column of values"  
+comments: false
+---

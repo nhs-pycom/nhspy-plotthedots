@@ -10,40 +10,7 @@
 <atom:link href="https://nhs-pycom.github.io/nhspy-plotthedots/updates.xml" rel="self" type="application/rss+xml"/>
 <description>Draw XmR charts in python for NHSE &#39;Making Data Count&#39; programme.</description>
 <generator>quarto-1.2.280</generator>
-<lastBuildDate>Sun, 22 Jan 2023 00:00:00 GMT</lastBuildDate>
-<item>
-  <title>nhspy-plotthedots alpha release</title>
-  <dc:creator>Craig R Shenton</dc:creator>
-  <link>https://nhs-pycom.github.io/nhspy-plotthedots/posts/welcome/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<p>We are excited to announce the release of <code>nhspy-plotthedots</code> alpha, version <code>0.1.6</code>. This new package is now available on test PyPI at <a href="https://test.pypi.org/project/nhspy-plotthedots-test/">https://test.pypi.org/project/nhspy-plotthedots-test/</a> for users to test and provide feedback.</p>
-<p>In addition to the package release, the documentation site for nhspy-plotthedots is now live. This quarto site will provide detailed information on how to use the package, including installation instructions, usage examples, and API reference.</p>
-<p>We look forward to hearing your feedback on <code>nhspy-plotthedots</code> and hope you find it as useful as we do.</p>
-<div class="callout-warning callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is an alpha release for testing, not for use in production analysis.</p>
-</div>
-</div>
-
-
-
- ]]></description>
-  <category>release</category>
-  <guid>https://nhs-pycom.github.io/nhspy-plotthedots/posts/welcome/index.html</guid>
-  <pubDate>Sun, 22 Jan 2023 00:00:00 GMT</pubDate>
-  <media:content url="https://nhs-pycom.github.io/nhspy-plotthedots/posts/welcome/thumbnail.png" medium="image" type="image/png" height="103" width="144"/>
-</item>
+<lastBuildDate>Mon, 23 Jan 2023 00:00:00 GMT</lastBuildDate>
 <item>
   <title>RAP Maturity Framework</title>
   <dc:creator>Craig R Shenton</dc:creator>
@@ -54,8 +21,8 @@ Note
 
 <section id="the-levels-of-rap-maturity-framework" class="level2">
 <h2 class="anchored" data-anchor-id="the-levels-of-rap-maturity-framework">The ‘Levels of RAP’ Maturity Framework</h2>
-<p>Developed by <a href="https://nhsdigital.github.io/rap-community-of-practice/introduction_to_RAP/levels_of_RAP/">NHS Digital RAP community</a>.</p>
-<p>There are three levels:</p>
+<p>We are going to be developing <code>nhspy-plotthedots</code> in a Reproducible Analytical Pipeline (RAP) way by following the maturity framework developed by <a href="https://nhsdigital.github.io/rap-community-of-practice/introduction_to_RAP/levels_of_RAP/">NHS Digital RAP community</a>.</p>
+<p>There are three levels to RAP:</p>
 <ol type="1">
 <li>Baseline - <strong>RAP fundamentals</strong> offering resilience against future change.</li>
 <li>Silver - <strong>Implementing best practice</strong> by following good analytical and software engineering standards.</li>
@@ -105,8 +72,41 @@ Note
   <category>NHS</category>
   <category>RAP</category>
   <guid>https://nhs-pycom.github.io/nhspy-plotthedots/posts/rap-maturity/index.html</guid>
-  <pubDate>Sun, 11 Dec 2022 00:00:00 GMT</pubDate>
+  <pubDate>Mon, 23 Jan 2023 00:00:00 GMT</pubDate>
   <media:content url="https://nhs-pycom.github.io/nhspy-plotthedots/posts/rap-maturity/nhsd-rap.png" medium="image" type="image/png" height="92" width="144"/>
+</item>
+<item>
+  <title>nhspy-plotthedots alpha release</title>
+  <dc:creator>Craig R Shenton</dc:creator>
+  <link>https://nhs-pycom.github.io/nhspy-plotthedots/posts/welcome/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>We are excited to announce the release of <code>nhspy-plotthedots</code> alpha, version <code>0.1.6</code>. This new package is now available on test PyPI at <a href="https://test.pypi.org/project/nhspy-plotthedots-test/">https://test.pypi.org/project/nhspy-plotthedots-test/</a> for users to test and provide feedback.</p>
+<p>In addition to the package release, the documentation site for nhspy-plotthedots is now live. This quarto site will provide detailed information on how to use the package, including installation instructions, usage examples, and API reference.</p>
+<p>We look forward to hearing your feedback on <code>nhspy-plotthedots</code> and hope you find it as useful as we do.</p>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is an alpha release for testing, not for use in production.</p>
+</div>
+</div>
+
+
+
+ ]]></description>
+  <category>release</category>
+  <guid>https://nhs-pycom.github.io/nhspy-plotthedots/posts/welcome/index.html</guid>
+  <pubDate>Sun, 22 Jan 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://nhs-pycom.github.io/nhspy-plotthedots/posts/welcome/thumbnail.png" medium="image" type="image/png" height="103" width="144"/>
 </item>
 </channel>
 </rss>

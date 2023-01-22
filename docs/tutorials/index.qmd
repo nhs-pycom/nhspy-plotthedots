@@ -13,7 +13,7 @@ anchor-sections: false
 :::: {.g-col-lg-3 .g-col-12}
 ## Step 1 
 
-#### Fork RAPdown {.fw-light}
+#### Fork package {.fw-light}
 ::::
 
 :::: {.g-col-lg-6 .g-col-12}
