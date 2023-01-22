@@ -74,7 +74,7 @@
     "href": "tutorials/index.html",
     "title": "Get Started",
     "section": "",
-    "text": "Before getting started, you should Fork this repository from github"
+    "text": "Under Development"
   },
   {
     "objectID": "tutorials/index.html#step-2",
@@ -117,5 +117,19 @@
     "title": "nhspy-plotthedots",
     "section": "NHS-R slack",
     "text": "NHS-R slack\nIf you want to learn more about this project, please join the discussion at the NHS-R Community Slack group and the specific channel #proj-nhsr-plot-the-dots."
+  },
+  {
+    "objectID": "tutorials/index.html#step-1",
+    "href": "tutorials/index.html#step-1",
+    "title": "Get Started",
+    "section": "Step 1",
+    "text": "Step 1\n\nFork RAPdown"
+  },
+  {
+    "objectID": "tutorials/index.html#download-the-code-locally",
+    "href": "tutorials/index.html#download-the-code-locally",
+    "title": "Get Started",
+    "section": "Download the code locally",
+    "text": "Download the code locally\nBefore getting started, you should Fork this repository from github"
   }
 ]
