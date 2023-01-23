@@ -1,26 +1,32 @@
 ---
 title: "Get Started"
-subtitle: "Check out the tutorials to learn the basics."  
+subtitle: "A quick tutorial to learn the basics."  
 comments: false
 anchor-sections: false
 ---
-::: {.callout-warning}
-## Under Development
-:::
 
 ::::: {.grid .step .column-page-right}
 
-:::: {.g-col-lg-3 .g-col-12}
+:::: {.g-col-lg-2 .g-col-12}
 ## Step 1 
 
-#### Fork package {.fw-light}
+#### Install {.fw-light}
 ::::
 
-:::: {.g-col-lg-6 .g-col-12}
+:::: {.g-col-lg-7 .g-col-12}
 
 ## Download the code locally
 
-Before getting started, you should [Fork this repository from github](https://github.com/nhs-pycom/nhspy-plotthedots/fork)
+```{python}
+#| output: false
+
+# Install libs from the test Python Package Index (pypi) repo
+%pip install --index-url https://test.pypi.org/simple/ --no-deps nhspy-plotthedots-test
+
+# Import plotthedots to your environment
+from nhspy_plotthedots import pandas_spc_calculations
+from nhspy_plotthedots import plotly_spc_chart
+```
 
 ::::
 
@@ -28,15 +34,84 @@ Before getting started, you should [Fork this repository from github](https://gi
 
 ::::: {.grid .step .column-page-right}
 
-:::: {.g-col-lg-3 .g-col-12}
+:::: {.g-col-lg-2 .g-col-12}
 ## Step 2
 
-#### Run make() {.fw-light}
+#### Process Data {.fw-light}
 ::::
 
-:::: {.g-col-lg-6 .g-col-12}
+:::: {.g-col-lg-7 .g-col-12}
 
-## Build your first report
+## Load time-series data into `pandas`
+
+```{python}
+import pandas as pd
+from datetime import datetime
+
+# url path of the CSV file
+url = 'https://raw.githubusercontent.com/nhs-pycom/nhspy-plotthedots/main/nhspy_plotthedots/data/ae_attendances.csv'
+
+# Read the CSV file and store it in a pandas DataFrame
+df = pd.read_csv(url)
+
+# Convert 'period' column to datetime format
+df['period'] = pd.to_datetime(df['period'])
+
+# Create a subset of the DataFrame based on certain conditions
+sub_set = df[(df['org_code'] == "RQM") & (df['type'] == "1") & (df['period'] < datetime(2018, 4, 1))]
+
+# It's important to sort values by date for time-series and reset index for spc calculations
+sub_set = sub_set.sort_values(by='period').reset_index(drop=True)
+sub_set.head()
+```
+
+::::
+
+:::::
+
+::::: {.grid .step .column-page-right}
+
+:::: {.g-col-lg-2 .g-col-12}
+## Step 3
+
+#### Calculation {.fw-light}
+::::
+
+:::: {.g-col-lg-7 .g-col-12}
+
+##  Calculate the control limits
+```{python}
+# calculate control limits
+spc = pandas_spc_calculations.pandas_spc_x_calc(sub_set, 'breaches')
+spc.head()
+```
+
+::::
+
+:::::
+
+::::: {.grid .step .column-page-right}
+
+:::: {.g-col-lg-2 .g-col-12}
+## Step 4
+
+#### Visualisation {.fw-light}
+::::
+
+:::: {.g-col-lg-7 .g-col-12}
+
+## Plot the statistical process control chart
+```{python}
+#| label: fig-4-hour-breach1
+#| fig-cap: Number of A&E attendance 4-Hour Breaches
+#| fig-align: center
+
+import plotly.io as pio
+pio.renderers.default = "plotly_mimetype+notebook"
+
+# plot SPC chart
+plotly_spc_chart.plotly_spc_chart(spc, 'breaches', 'period', plot_title = 'Chelsea & Westminster Hospital NHS FT', x_lab = 'Month of attendance', y_lab = 'Number of 4-Hour Target Breaches')
+```
 
 ::::
 

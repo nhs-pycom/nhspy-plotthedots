@@ -7,6 +7,45 @@ description: |
 comments: false
 ---
 
+```{python}
+#| echo: false
+#| output: false
+# Install libs from test PIPY
+%pip install --index-url https://test.pypi.org/simple/ --no-deps nhspy-plotthedots-test
+
+# Import libs
+import pandas as pd
+from datetime import datetime
+import plotly.io as pio
+pio.renderers.default = "plotly_mimetype+notebook"
+```
+
+```{python}
+#| echo: false
+#| output: false
+# File path of the CSV file
+url = 'https://raw.githubusercontent.com/nhs-pycom/nhspy-plotthedots/main/nhspy_plotthedots/data/ae_attendances.csv'
+
+# Read the CSV file and store it in a DataFrame
+df = pd.read_csv(url)
+
+# Convert 'period' column to datetime format
+df['period'] = pd.to_datetime(df['period'])
+
+# Create a subset of the DataFrame based on certain conditions
+sub_set = df[(df['org_code'] == "RQM") & (df['type'] == "1") & (df['period'] < datetime(2018, 4, 1))]
+sub_set = sub_set.sort_values(by='period').reset_index(drop=True)
+```
+
+```{python}
+#| echo: false
+#| output: false
+from nhspy_plotthedots import pandas_spc_calculations
+
+# calculate control limits
+spc = pandas_spc_calculations.pandas_spc_x_calc(sub_set, 'breaches')
+```
+
 :::: {.hero-banner}
 
 ::: {.hero-image .hero-image-left}
@@ -16,10 +55,10 @@ comments: false
 
 # nhspy-plotthedots <span>v0.1.6 (alpha)</span>
 
-### Calculate control limits and draw XmR charts in python.
+### Calculate control limits and draw Statistical Process Control charts in python.
 
 ::: {.hero-buttons}
-[Read the Docs](tutorials/index.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
+[Quick Start](tutorials/index.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
 <!-- [Read the docs](documentation/index.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
 [Latest](updates.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"} -->
 ::: 
@@ -40,59 +79,22 @@ The [NHSR Plot the Dots](https://github.com/nhs-r-community/NHSRplotthedots) pac
 Please be aware that this package is in the early stages of development, and features may change.
 :::
 
-## Quick Start
+## Statistical Process Control
 
-Below is a simple example of the type of chart the package produces. We will use the `ae_attendances` dataset from the [NHSRdatasets](https://github.com/nhs-r-community/NHSRdatasets) package and a bit of `pandas` code to select some organisations.
+Statistical process control (SPC) is an analytical technique that plots data over time. It helps us understand variation and in so doing guides us to take the most appropriate action.
 
-### Install and load some libraries
+SPC is a good technique to use when implementing change as it enables you to understand whether changes you are making are resulting in improvement — a key component of the Model for Improvement widely used within the NHS.
+
+::: {.panel-tabset}
+## Example `nhspy-plotthedots` Chart
 ```{python}
-# Install libs from test PIPY
-%pip install --index-url https://test.pypi.org/simple/ --no-deps nhspy-plotthedots-test
-
-# Import libs
-import pandas as pd
-from datetime import datetime
-import plotly.io as pio
-pio.renderers.default = "plotly_mimetype+notebook"
-```
-
-### Load the data into `pandas`
-```{python}
-# File path of the CSV file
-url = 'https://raw.githubusercontent.com/nhs-pycom/nhspy-plotthedots/main/nhspy_plotthedots/data/ae_attendances.csv'
-
-# Read the CSV file and store it in a DataFrame
-df = pd.read_csv(url)
-
-# Convert 'period' column to datetime format
-df['period'] = pd.to_datetime(df['period'])
-
-# Create a subset of the DataFrame based on certain conditions
-sub_set = df[(df['org_code'] == "RQM") & (df['type'] == "1") & (df['period'] < datetime(2018, 4, 1))]
-sub_set = sub_set.sort_values(by='period').reset_index(drop=True)
-
-sub_set.head()
-```
-
-### Calculate the control limits
-```{python}
-from nhspy_plotthedots import pandas_spc_calculations
-
-# calculate control limits
-spc = pandas_spc_calculations.pandas_spc_x_calc(sub_set, 'breaches')
-spc.head()
-```
-
-### Plot the `plotly` SPC chart
-```{python}
-#| label: fig-4-hour-breach
-#| fig-cap: Number of A&E attendance 4-Hour Breaches
-#| fig-align: center
+#| echo: false
 from nhspy_plotthedots import plotly_spc_chart
 
 # plot SPC chart
-plotly_spc_chart.plotly_spc_chart(spc, 'breaches', 'period', plot_title = 'Chelsea & Westminster Hospital NHS Foundation Trust (RQM)', x_lab = 'Month of attendance', y_lab = 'Number of 4-Hour Target Breaches')
+plotly_spc_chart.plotly_spc_chart(spc, 'breaches', 'period', plot_title = 'Chelsea & Westminster Hospital NHS FT', x_lab = 'Month of attendance', y_lab = 'Number of 4-Hour Target Breaches')
 ```
+:::
 
 ## NHS-R slack
 
