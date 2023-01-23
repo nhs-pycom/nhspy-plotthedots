@@ -21,69 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -306,13 +243,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#quick-start" id="toc-quick-start" class="nav-link active" data-scroll-target="#quick-start">Quick Start</a>
-  <ul>
-  <li><a href="#install-and-load-some-libraries" id="toc-install-and-load-some-libraries" class="nav-link" data-scroll-target="#install-and-load-some-libraries">Install and load some libraries</a></li>
-  <li><a href="#load-the-data-into-pandas" id="toc-load-the-data-into-pandas" class="nav-link" data-scroll-target="#load-the-data-into-pandas">Load the data into <code>pandas</code></a></li>
-  <li><a href="#calculate-the-control-limits" id="toc-calculate-the-control-limits" class="nav-link" data-scroll-target="#calculate-the-control-limits">Calculate the control limits</a></li>
-  <li><a href="#plot-the-plotly-spc-chart" id="toc-plot-the-plotly-spc-chart" class="nav-link" data-scroll-target="#plot-the-plotly-spc-chart">Plot the <code>plotly</code> SPC chart</a></li>
-  </ul></li>
+  <li><a href="#statistical-process-control" id="toc-statistical-process-control" class="nav-link active" data-scroll-target="#statistical-process-control">Statistical Process Control</a></li>
   <li><a href="#nhs-r-slack" id="toc-nhs-r-slack" class="nav-link" data-scroll-target="#nhs-r-slack">NHS-R slack</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nhs-pycom/nhspy-plotthedots/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/nhs-pycom/nhspy-plotthedots/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -328,10 +259,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <section id="nhspy-plotthedots-v0.1.6-alpha" class="level1 content-block">
 <h1>nhspy-plotthedots <span>v0.1.6 (alpha)</span></h1>
-<section id="calculate-control-limits-and-draw-xmr-charts-in-python." class="level3">
-<h3 class="anchored" data-anchor-id="calculate-control-limits-and-draw-xmr-charts-in-python.">Calculate control limits and draw XmR charts in python.</h3>
+<section id="calculate-control-limits-and-draw-statistical-process-control-charts-in-python." class="level3">
+<h3 class="anchored" data-anchor-id="calculate-control-limits-and-draw-statistical-process-control-charts-in-python.">Calculate control limits and draw Statistical Process Control charts in python.</h3>
 <div class="hero-buttons">
-<p><a href="./tutorials/index.html" class="btn-action-primary btn-action btn btn-success btn-lg" role="button">Read the Docs</a> <!-- [Read the docs](documentation/index.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
+<p><a href="./tutorials/index.html" class="btn-action-primary btn-action btn btn-success btn-lg" role="button">Quick Start</a> <!-- [Read the docs](documentation/index.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
 [Latest](updates.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"} --></p>
 </div>
 </section>
@@ -355,245 +286,20 @@ Note
 <p>Please be aware that this package is in the early stages of development, and features may change.</p>
 </div>
 </div>
-<section id="quick-start" class="level2">
-<h2 class="anchored" data-anchor-id="quick-start">Quick Start</h2>
-<p>Below is a simple example of the type of chart the package produces. We will use the <code>ae_attendances</code> dataset from the <a href="https://github.com/nhs-r-community/NHSRdatasets">NHSRdatasets</a> package and a bit of <code>pandas</code> code to select some organisations.</p>
-<section id="install-and-load-some-libraries" class="level3">
-<h3 class="anchored" data-anchor-id="install-and-load-some-libraries">Install and load some libraries</h3>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install libs from test PIPY</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install <span class="op">--</span>index<span class="op">-</span>url https:<span class="op">//</span>test.pypi.org<span class="op">/</span>simple<span class="op">/</span> <span class="op">--</span>no<span class="op">-</span>deps nhspy<span class="op">-</span>plotthedots<span class="op">-</span>test</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Import libs</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.io <span class="im">as</span> pio</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>pio.renderers.default <span class="op">=</span> <span class="st">"plotly_mimetype+notebook"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Looking in indexes: https://test.pypi.org/simple/
-Requirement already satisfied: nhspy-plotthedots-test in /opt/homebrew/lib/python3.10/site-packages (0.1.6)</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Note: you may need to restart the kernel to use updated packages.</code></pre>
-</div>
-</div>
-</section>
-<section id="load-the-data-into-pandas" class="level3">
-<h3 class="anchored" data-anchor-id="load-the-data-into-pandas">Load the data into <code>pandas</code></h3>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># File path of the CSV file</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/nhs-pycom/nhspy-plotthedots/main/nhspy_plotthedots/data/ae_attendances.csv'</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the CSV file and store it in a DataFrame</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert 'period' column to datetime format</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'period'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'period'</span>])</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a subset of the DataFrame based on certain conditions</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>sub_set <span class="op">=</span> df[(df[<span class="st">'org_code'</span>] <span class="op">==</span> <span class="st">"RQM"</span>) <span class="op">&amp;</span> (df[<span class="st">'type'</span>] <span class="op">==</span> <span class="st">"1"</span>) <span class="op">&amp;</span> (df[<span class="st">'period'</span>] <span class="op">&lt;</span> datetime(<span class="dv">2018</span>, <span class="dv">4</span>, <span class="dv">1</span>))]</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>sub_set <span class="op">=</span> sub_set.sort_values(by<span class="op">=</span><span class="st">'period'</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>sub_set.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-
-<div>
-
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>period</th>
-      <th>org_code</th>
-      <th>type</th>
-      <th>attendances</th>
-      <th>breaches</th>
-      <th>admissions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2016-04-01</td>
-      <td>RQM</td>
-      <td>1</td>
-      <td>15154</td>
-      <td>1199</td>
-      <td>3415</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2016-05-01</td>
-      <td>RQM</td>
-      <td>1</td>
-      <td>16705</td>
-      <td>929</td>
-      <td>3590</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2016-06-01</td>
-      <td>RQM</td>
-      <td>1</td>
-      <td>16021</td>
-      <td>970</td>
-      <td>3398</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2016-07-01</td>
-      <td>RQM</td>
-      <td>1</td>
-      <td>16761</td>
-      <td>1178</td>
-      <td>3321</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2016-08-01</td>
-      <td>RQM</td>
-      <td>1</td>
-      <td>15084</td>
-      <td>1110</td>
-      <td>3198</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section id="calculate-the-control-limits" class="level3">
-<h3 class="anchored" data-anchor-id="calculate-the-control-limits">Calculate the control limits</h3>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nhspy_plotthedots <span class="im">import</span> pandas_spc_calculations</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate control limits</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>spc <span class="op">=</span> pandas_spc_calculations.pandas_spc_x_calc(sub_set, <span class="st">'breaches'</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>spc.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-
-<div>
-
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>period</th>
-      <th>org_code</th>
-      <th>type</th>
-      <th>attendances</th>
-      <th>breaches</th>
-      <th>admissions</th>
-      <th>mean</th>
-      <th>lpl</th>
-      <th>upl</th>
-      <th>outside_limits</th>
-      <th>relative_to_mean</th>
-      <th>close_to_limits</th>
-      <th>special_cause_flag</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2016-04-01</td>
-      <td>RQM</td>
-      <td>1</td>
-      <td>15154</td>
-      <td>1199</td>
-      <td>3415</td>
-      <td>1545.166667</td>
-      <td>740.395758</td>
-      <td>2349.937576</td>
-      <td>False</td>
-      <td>-1.0</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2016-05-01</td>
-      <td>RQM</td>
-      <td>1</td>
-      <td>16705</td>
-      <td>929</td>
-      <td>3590</td>
-      <td>1545.166667</td>
-      <td>740.395758</td>
-      <td>2349.937576</td>
-      <td>False</td>
-      <td>-1.0</td>
-      <td>True</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2016-06-01</td>
-      <td>RQM</td>
-      <td>1</td>
-      <td>16021</td>
-      <td>970</td>
-      <td>3398</td>
-      <td>1545.166667</td>
-      <td>740.395758</td>
-      <td>2349.937576</td>
-      <td>False</td>
-      <td>-1.0</td>
-      <td>True</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2016-07-01</td>
-      <td>RQM</td>
-      <td>1</td>
-      <td>16761</td>
-      <td>1178</td>
-      <td>3321</td>
-      <td>1545.166667</td>
-      <td>740.395758</td>
-      <td>2349.937576</td>
-      <td>False</td>
-      <td>-1.0</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2016-08-01</td>
-      <td>RQM</td>
-      <td>1</td>
-      <td>15084</td>
-      <td>1110</td>
-      <td>3198</td>
-      <td>1545.166667</td>
-      <td>740.395758</td>
-      <td>2349.937576</td>
-      <td>False</td>
-      <td>-1.0</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section id="plot-the-plotly-spc-chart" class="level3">
-<h3 class="anchored" data-anchor-id="plot-the-plotly-spc-chart">Plot the <code>plotly</code> SPC chart</h3>
+<section id="statistical-process-control" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-process-control">Statistical Process Control</h2>
+<p>Statistical process control (SPC) is an analytical technique that plots data over time. It helps us understand variation and in so doing guides us to take the most appropriate action.</p>
+<p>SPC is a good technique to use when implementing change as it enables you to understand whether changes you are making are resulting in improvement — a key component of the Model for Improvement widely used within the NHS.</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Example <code>nhspy-plotthedots</code> Chart</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nhspy_plotthedots <span class="im">import</span> plotly_spc_chart</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># plot SPC chart</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plotly_spc_chart.plotly_spc_chart(spc, <span class="st">'breaches'</span>, <span class="st">'period'</span>, plot_title <span class="op">=</span> <span class="st">'Chelsea &amp; Westminster Hospital NHS Foundation Trust (RQM)'</span>, x_lab <span class="op">=</span> <span class="st">'Month of attendance'</span>, y_lab <span class="op">=</span> <span class="st">'Number of 4-Hour Target Breaches'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-4-hour-breach" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
+<div class="cell-output cell-output-display">
 
-<div>                            <div id="d9e254ec-2391-4bf5-b3ad-e28988ba8960" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("d9e254ec-2391-4bf5-b3ad-e28988ba8960")) {                    Plotly.newPlot(                        "d9e254ec-2391-4bf5-b3ad-e28988ba8960",                        [{"hovertemplate":"%{text}: %{y:.0f}<extra></extra>","line":{"color":"rgb(22, 96, 167)","dash":"solid","width":3},"marker":{"color":["rgb(22, 96, 167)","yellow","yellow","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","red","red","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)"],"size":10,"symbol":"circle"},"mode":"lines+markers","name":"Performance","text":["Below mean","Close to limit","Close to limit","Below mean","Below mean","Below mean","Above mean","Above mean","Outside Limit","Outside Limit","Above mean","Above mean","Below mean","Above mean","Below mean","Below mean","Below mean","Below mean","Below mean","Below mean","Above mean","Below mean","Below mean","Above mean"],"x":["2016-04-01T00:00:00","2016-05-01T00:00:00","2016-06-01T00:00:00","2016-07-01T00:00:00","2016-08-01T00:00:00","2016-09-01T00:00:00","2016-10-01T00:00:00","2016-11-01T00:00:00","2016-12-01T00:00:00","2017-01-01T00:00:00","2017-02-01T00:00:00","2017-03-01T00:00:00","2017-04-01T00:00:00","2017-05-01T00:00:00","2017-06-01T00:00:00","2017-07-01T00:00:00","2017-08-01T00:00:00","2017-09-01T00:00:00","2017-10-01T00:00:00","2017-11-01T00:00:00","2017-12-01T00:00:00","2018-01-01T00:00:00","2018-02-01T00:00:00","2018-03-01T00:00:00"],"y":[1199,929,970,1178,1110,1388,2061,1985,2675,3141,1942,2030,1309,1960,1169,1117,1085,1492,1280,1197,1569,1406,1328,1564],"type":"scatter"},{"hovertemplate":"mean: %{y:.0f}<extra></extra>","line":{"color":"rgba(174, 37, 115, 0.5)","dash":"dash","width":2},"mode":"lines","name":"Mean","x":["2016-04-01T00:00:00","2016-05-01T00:00:00","2016-06-01T00:00:00","2016-07-01T00:00:00","2016-08-01T00:00:00","2016-09-01T00:00:00","2016-10-01T00:00:00","2016-11-01T00:00:00","2016-12-01T00:00:00","2017-01-01T00:00:00","2017-02-01T00:00:00","2017-03-01T00:00:00","2017-04-01T00:00:00","2017-05-01T00:00:00","2017-06-01T00:00:00","2017-07-01T00:00:00","2017-08-01T00:00:00","2017-09-01T00:00:00","2017-10-01T00:00:00","2017-11-01T00:00:00","2017-12-01T00:00:00","2018-01-01T00:00:00","2018-02-01T00:00:00","2018-03-01T00:00:00"],"y":[1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667],"type":"scatter"},{"hovertemplate":"lpl: %{y:.0f}<extra></extra>","line":{"color":"rgba(174, 37, 115, 0.1)","width":0},"mode":"lines","name":"lpl","x":["2016-04-01T00:00:00","2016-05-01T00:00:00","2016-06-01T00:00:00","2016-07-01T00:00:00","2016-08-01T00:00:00","2016-09-01T00:00:00","2016-10-01T00:00:00","2016-11-01T00:00:00","2016-12-01T00:00:00","2017-01-01T00:00:00","2017-02-01T00:00:00","2017-03-01T00:00:00","2017-04-01T00:00:00","2017-05-01T00:00:00","2017-06-01T00:00:00","2017-07-01T00:00:00","2017-08-01T00:00:00","2017-09-01T00:00:00","2017-10-01T00:00:00","2017-11-01T00:00:00","2017-12-01T00:00:00","2018-01-01T00:00:00","2018-02-01T00:00:00","2018-03-01T00:00:00"],"y":[740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576],"type":"scatter"},{"fill":"tonexty","fillcolor":"rgba(174, 37, 115, 0.1)","hovertemplate":"upl: %{y:.0f}<extra></extra>","line":{"color":"rgba(174, 37, 115, 0.1)","width":0},"mode":"lines","name":"upl","x":["2016-04-01T00:00:00","2016-05-01T00:00:00","2016-06-01T00:00:00","2016-07-01T00:00:00","2016-08-01T00:00:00","2016-09-01T00:00:00","2016-10-01T00:00:00","2016-11-01T00:00:00","2016-12-01T00:00:00","2017-01-01T00:00:00","2017-02-01T00:00:00","2017-03-01T00:00:00","2017-04-01T00:00:00","2017-05-01T00:00:00","2017-06-01T00:00:00","2017-07-01T00:00:00","2017-08-01T00:00:00","2017-09-01T00:00:00","2017-10-01T00:00:00","2017-11-01T00:00:00","2017-12-01T00:00:00","2018-01-01T00:00:00","2018-02-01T00:00:00","2018-03-01T00:00:00"],"y":[2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576],"type":"scatter"}],                        {"font":{"size":12},"hovermode":"x unified","showlegend":false,"title":{"text":"Chelsea & Westminster Hospital NHS Foundation Trust (RQM)"},"xaxis":{"range":["2016-03-27T00:00:00","2018-03-06T00:00:00"],"title":{"text":"Month of attendance"}},"yaxis":{"range":[0,3455.1],"title":{"text":"Number of 4-Hour Target Breaches"}},"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}}},                        {"displaylogo": false, "displayModeBar": true, "modeBarButtonsToRemove": ["zoom2d", "pan2d", "select2d", "lasso2d", "zoomIn2d", "zoomOut2d", "autoScale2d", "resetScale2d", "zoom", "pan", "select", "zoomIn", "zoomOut", "autoScale", "resetScale", "toggleSpikelines", "hoverClosestCartesian", "hoverCompareCartesian", "toImage"], "responsive": true}                    ).then(function(){
+<div>                            <div id="c797c481-4724-45dc-b797-9c4e9d0d687d" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("c797c481-4724-45dc-b797-9c4e9d0d687d")) {                    Plotly.newPlot(                        "c797c481-4724-45dc-b797-9c4e9d0d687d",                        [{"hovertemplate":"%{text}: %{y:.0f}<extra></extra>","line":{"color":"rgb(22, 96, 167)","dash":"solid","width":3},"marker":{"color":["rgb(22, 96, 167)","yellow","yellow","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","red","red","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)","rgb(22, 96, 167)"],"size":10,"symbol":"circle"},"mode":"lines+markers","name":"Performance","text":["Below mean","Close to limit","Close to limit","Below mean","Below mean","Below mean","Above mean","Above mean","Outside Limit","Outside Limit","Above mean","Above mean","Below mean","Above mean","Below mean","Below mean","Below mean","Below mean","Below mean","Below mean","Above mean","Below mean","Below mean","Above mean"],"x":["2016-04-01T00:00:00","2016-05-01T00:00:00","2016-06-01T00:00:00","2016-07-01T00:00:00","2016-08-01T00:00:00","2016-09-01T00:00:00","2016-10-01T00:00:00","2016-11-01T00:00:00","2016-12-01T00:00:00","2017-01-01T00:00:00","2017-02-01T00:00:00","2017-03-01T00:00:00","2017-04-01T00:00:00","2017-05-01T00:00:00","2017-06-01T00:00:00","2017-07-01T00:00:00","2017-08-01T00:00:00","2017-09-01T00:00:00","2017-10-01T00:00:00","2017-11-01T00:00:00","2017-12-01T00:00:00","2018-01-01T00:00:00","2018-02-01T00:00:00","2018-03-01T00:00:00"],"y":[1199,929,970,1178,1110,1388,2061,1985,2675,3141,1942,2030,1309,1960,1169,1117,1085,1492,1280,1197,1569,1406,1328,1564],"type":"scatter"},{"hovertemplate":"mean: %{y:.0f}<extra></extra>","line":{"color":"rgba(174, 37, 115, 0.5)","dash":"dash","width":2},"mode":"lines","name":"Mean","x":["2016-04-01T00:00:00","2016-05-01T00:00:00","2016-06-01T00:00:00","2016-07-01T00:00:00","2016-08-01T00:00:00","2016-09-01T00:00:00","2016-10-01T00:00:00","2016-11-01T00:00:00","2016-12-01T00:00:00","2017-01-01T00:00:00","2017-02-01T00:00:00","2017-03-01T00:00:00","2017-04-01T00:00:00","2017-05-01T00:00:00","2017-06-01T00:00:00","2017-07-01T00:00:00","2017-08-01T00:00:00","2017-09-01T00:00:00","2017-10-01T00:00:00","2017-11-01T00:00:00","2017-12-01T00:00:00","2018-01-01T00:00:00","2018-02-01T00:00:00","2018-03-01T00:00:00"],"y":[1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667,1545.1666666666667],"type":"scatter"},{"hovertemplate":"lpl: %{y:.0f}<extra></extra>","line":{"color":"rgba(174, 37, 115, 0.1)","width":0},"mode":"lines","name":"lpl","x":["2016-04-01T00:00:00","2016-05-01T00:00:00","2016-06-01T00:00:00","2016-07-01T00:00:00","2016-08-01T00:00:00","2016-09-01T00:00:00","2016-10-01T00:00:00","2016-11-01T00:00:00","2016-12-01T00:00:00","2017-01-01T00:00:00","2017-02-01T00:00:00","2017-03-01T00:00:00","2017-04-01T00:00:00","2017-05-01T00:00:00","2017-06-01T00:00:00","2017-07-01T00:00:00","2017-08-01T00:00:00","2017-09-01T00:00:00","2017-10-01T00:00:00","2017-11-01T00:00:00","2017-12-01T00:00:00","2018-01-01T00:00:00","2018-02-01T00:00:00","2018-03-01T00:00:00"],"y":[740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576,740.3957575757576],"type":"scatter"},{"fill":"tonexty","fillcolor":"rgba(174, 37, 115, 0.1)","hovertemplate":"upl: %{y:.0f}<extra></extra>","line":{"color":"rgba(174, 37, 115, 0.1)","width":0},"mode":"lines","name":"upl","x":["2016-04-01T00:00:00","2016-05-01T00:00:00","2016-06-01T00:00:00","2016-07-01T00:00:00","2016-08-01T00:00:00","2016-09-01T00:00:00","2016-10-01T00:00:00","2016-11-01T00:00:00","2016-12-01T00:00:00","2017-01-01T00:00:00","2017-02-01T00:00:00","2017-03-01T00:00:00","2017-04-01T00:00:00","2017-05-01T00:00:00","2017-06-01T00:00:00","2017-07-01T00:00:00","2017-08-01T00:00:00","2017-09-01T00:00:00","2017-10-01T00:00:00","2017-11-01T00:00:00","2017-12-01T00:00:00","2018-01-01T00:00:00","2018-02-01T00:00:00","2018-03-01T00:00:00"],"y":[2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576,2349.937575757576],"type":"scatter"}],                        {"font":{"size":12},"hovermode":"x unified","showlegend":false,"title":{"text":"Chelsea & Westminster Hospital NHS FT"},"xaxis":{"range":["2016-03-27T00:00:00","2018-03-06T00:00:00"],"title":{"text":"Month of attendance"}},"yaxis":{"range":[0,3455.1],"title":{"text":"Number of 4-Hour Target Breaches"}},"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}}},                        {"displaylogo": false, "displayModeBar": true, "modeBarButtonsToRemove": ["zoom2d", "pan2d", "select2d", "lasso2d", "zoomIn2d", "zoomOut2d", "autoScale2d", "resetScale2d", "zoom", "pan", "select", "zoomIn", "zoomOut", "autoScale", "resetScale", "toggleSpikelines", "hoverClosestCartesian", "hoverCompareCartesian", "toImage"], "responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('d9e254ec-2391-4bf5-b3ad-e28988ba8960');
+var gd = document.getElementById('c797c481-4724-45dc-b797-9c4e9d0d687d');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -616,11 +322,11 @@ if (outputEl) {{
 }}
 
                         })                };                });            </script>        </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Number of A&amp;E attendance 4-Hour Breaches</figcaption><p></p>
-</figure>
 </div>
 </div>
-</section>
+</div>
+</div>
+</div>
 </section>
 <section id="nhs-r-slack" class="level2">
 <h2 class="anchored" data-anchor-id="nhs-r-slack">NHS-R slack</h2>
