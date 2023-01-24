@@ -30,7 +30,7 @@
   <p align="center">
     NHS Python Community
     <br />
-    <a href=""><strong>Explore the docs »</strong></a>
+    <a href="https://nhs-pycom.github.io/nhspy-plotthedots/"><strong>Explore the docs »</strong></a>
     <br />
     <a href="https://github.com/nhs-pycom/nhspy-plotthedots/issues">Report Bug</a>
     ·
@@ -103,15 +103,16 @@ To get up and running follow these simple steps.
 
 ### Installation
 
-```python
-1+1
+```bash
+pip install --index-url https://test.pypi.org/simple/ --no-deps nhspy-plotthedots-test
 ```
 
+Note this is the the test version of pypi, not for use in production.
 <!-- USAGE EXAMPLES -->
 
 ## Usage
 
-Please refer to our [Read the Docs]() site
+Please refer to our [Read the Docs](https://nhs-pycom.github.io/nhspy-plotthedots/) site
 
 <!-- ROADMAP -->
 
