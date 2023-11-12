@@ -14,7 +14,7 @@
 #                 value of 1.
 #
 #                 These tests cover different scenarios such as an small input, large input,
-#                 exactly 7 values, no input, mixed input (asceding and), and negative input.
+#                 exactly 7 values, no input, mixed input (asceding and descending), and negacleative input.
 
 # CONTRIBUTORS:   Joan Ponsa, Craig R. Shenton
 # CONTACT:        craig.shenton@nhs.net
@@ -43,8 +43,13 @@ class TestSevenPointTrend(unittest.TestCase):
         expected = [True, True] + [False] * 18
         self.assertEqual(part_of_seven_trend(values), expected)
 
-    def test_exact_seven_input(self):
+    def test_exact_seven_input_pos(self):
         values = [1, 1, 1, 1, 1, 1, 1]
+        expected = [True] * 7
+        self.assertEqual(part_of_seven_trend(values), expected)
+
+    def test_exact_seven_input_neg(self):
+        values = [-1, -1, -1, -1, -1, -1, -1]
         expected = [True] * 7
         self.assertEqual(part_of_seven_trend(values), expected)
 
@@ -54,18 +59,18 @@ class TestSevenPointTrend(unittest.TestCase):
         self.assertEqual(part_of_seven_trend(values), expected)
 
     def test_mixed_input_asc(self):
-        values = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        values = [-2, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         expected = [True, True, True] + [False] * 9
         self.assertEqual(part_of_seven_trend(values), expected)
 
     def test_mixed_input_des(self):
-        values = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1]
+        values = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -2]
         expected = [False] * 3 + [True] * 7 + [False] * 2
         self.assertEqual(part_of_seven_trend(values), expected)
 
     def test_negative_input(self):
         values = [-1, -2, -3, -2, -1, -2, -3, -4, -5, -6, -7, -4, -3, -2, -1, -2]
-        expected = [False] * len(values)
+        expected = [True] * 5 + [False] * 3 + [True] * 7 + [False]
         self.assertEqual(part_of_seven_trend(values), expected)
 
 
