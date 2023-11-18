@@ -26,9 +26,13 @@
 #                     is a special cause or not'outside_limits' representing whether a
 #                    value is outside the process limits
 #
-#                 These tests cover different scenarios such as an increasing trend,
-#                 a decreasing trend, no trend, small input, large input, exactly 7
-#                 values, no input, mixed input, and negative input.
+#                 This test covers a single scenario reproducing the example from
+#                 https://www.england.nhs.uk/statistical-process-control-tool/
+#                 https://youtu.be/sWndrZ68Xww
+#                 More details in the test function docstring.
+#
+#                 TODO: Split the test into multiple tests by calculated field?
+#                 TODO: Include more scenarios
 
 # CONTRIBUTORS:   Joan Ponsa, Craig R. Shenton
 # CONTACT:        craig.shenton@nhs.net
@@ -57,7 +61,7 @@ class TestPandasSpcXCalc(unittest.TestCase):
         Test example reproduced from https://www.england.nhs.uk/statistical-process-control-tool/
         demonstrating the calculation of the SPC. Notice the values are similar but not.
         The resolution of the video was poor and I could not see the exact numbers.
-        Also, I substracted 10 from the original values in order to obtain an upper process limit value.
+        Also, I subtracted 10 from the original values in order to obtain an upper process limit value.
         """
         values_arr = [89, 86, 75, 77, 81, 74, 72, 78, 76, 82, 77, 54, 66, 77, 86]
         values_df = pd.DataFrame({"values": values_arr})
