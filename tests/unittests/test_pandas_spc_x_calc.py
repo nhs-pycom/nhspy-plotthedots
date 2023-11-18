@@ -7,11 +7,11 @@
 
 # FILE:           test_pandas_spc_x_calc.py
 
-# DESCRIPTION:    Tests on the pandas_scp_x_calc function.Given a pandas dataframe,
+# DESCRIPTION:    Tests on the pandas_scp_x_calc function.Given a pandas DataFrame,
 #                  a string indicating the column name of the values to be analysed,,
-#                 and an optional interger representing the number of values after which
+#                 and an optional integer representing the number of values after which
 #                 the mean and other calculations should be fixed. It returns a pandas
-#                 dataframe with the same values and the Statistic Process Control (SPC) values.
+#                 DataFrame with the same values and the Statistic Process Control (SPC) values.
 #                 The SCP values const of:
 #                   - mean: The mean of the input values
 #                   - lpl: The lower process limit of the input values
@@ -33,6 +33,7 @@
 #
 #                 TODO: Split the test into multiple tests by calculated field?
 #                 TODO: Include more scenarios
+#                 TODO: Test
 
 # CONTRIBUTORS:   Joan Ponsa, Craig R. Shenton
 # CONTACT:        craig.shenton@nhs.net
@@ -59,7 +60,7 @@ class TestPandasSpcXCalc(unittest.TestCase):
     def test_demo_case(self):
         """
         Test example reproduced from https://www.england.nhs.uk/statistical-process-control-tool/
-        demonstrating the calculation of the SPC. Notice the values are similar but not.
+        demonstrating the calculation of the SPC. Notice the values are similar but not identical.
         The resolution of the video was poor and I could not see the exact numbers.
         Also, I subtracted 10 from the original values in order to obtain an upper process limit value.
         """
@@ -100,6 +101,15 @@ class TestPandasSpcXCalc(unittest.TestCase):
         self.assertEqual(
             result_df["special_cause_flag"].tolist(), expected_special_cause_flag
         )
+
+    def test_fix_point_mean(self):
+        """
+        Test the mean calculation when the fix_point_mean is set.
+        """
+        values_df = pd.DataFrame({"values": np.arange(1, 11)})
+        result_df = pandas_spc_x_calc(values_df, "values", 5)
+        expected_mean = 3
+        self.assertAlmostEqual(result_df["mean"].iloc[-1], expected_mean, places=2)
 
 
 if __name__ == "__main__":
