@@ -4,9 +4,8 @@
 import numpy as np
 # Python:
 import unittest
-import math
 # Local
-from nhspy_plotthedots.pandas_spc_calculations import limits_calculations #in code documentation for limits_calculations parameters doesn't match function signature
+from nhspy_plotthedots.pandas_spc_calculations import limits_calculations
 # Define tests
 # -------------------------------------------------------------------------
 class LimitsCalculations(unittest.TestCase):

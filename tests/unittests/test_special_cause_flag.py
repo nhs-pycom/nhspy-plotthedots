@@ -8,7 +8,6 @@ import numpy as np
 
 # Local
 from nhspy_plotthedots.pandas_spc_calculations import special_cause_flag
-from nhspy_plotthedots.pandas_spc_calculations import two_in_three
 
 # Define tests
 # -------------------------------------------------------------------------
