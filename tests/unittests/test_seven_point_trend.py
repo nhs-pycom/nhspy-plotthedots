@@ -122,6 +122,11 @@ class TestPartOfSevenPointTrend(unittest.TestCase):
         values = [-1, -2, -3, -2, -1, -2, -3, -4, -5, -6, -7, -4, -3, -2, -1, -2]
         expected = [True] * 5 + [False] * 3 + [True] * 7 + [False]
         self.assertEqual(part_of_seven_trend(values), expected)
+    
+    def test_no_one(self):
+        values = list(range(2,12,2))
+        expected = [0] * 5
+        self.assertEqual(seven_point_trend(values), expected)
 
 
 class TestSevenPointOneSideMean(unittest.TestCase):

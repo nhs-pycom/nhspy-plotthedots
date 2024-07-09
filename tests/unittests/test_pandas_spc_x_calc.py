@@ -2,12 +2,13 @@
 # -------------------------------------------------------------------------
 # Python:
 import unittest
-from typing import Optional
+import math
 # 3rd party:
 import pandas as pd
 
 # Local
 from nhspy_plotthedots.pandas_spc_calculations import pandas_spc_x_calc
+
 # Define tests
 # -------------------------------------------------------------------------
 
@@ -63,9 +64,41 @@ class TestPandasSpcXCal(unittest.TestCase):
             "special_cause_flag" : [False] * 6,
         })
         self.assertTrue(pandas_spc_x_calc(df,col,n_points).equals(expected))
-
-
     
+    def test_nan(self):
+        df = pd.DataFrame(data = {"column" : [math.nan]})
+        col = "column"
+        n_points = None
+        expected = pd.DataFrame(data = 
+        {
+            "column" : [math.nan],
+            "mean" : [math.nan], 
+            "lpl" : [math.nan], 
+            "upl" : [math.nan],
+            "outside_limits" : [False],  
+            "relative_to_mean" : [math.nan], 
+            "close_to_limits" : [False],
+            "special_cause_flag" : [False],
+        })
+        self.assertTrue(pandas_spc_x_calc(df,col,n_points).equals(expected))
+    
+    def test_special_cause(self):
+        pd.set_option('display.max_columns', None)
+        df = pd.DataFrame(data = {"column" : [1,1,1,1,2]})
+        col = "column"
+        n_points = None
+        expected = pd.DataFrame(data = 
+        {
+            "column" : [1,1,1,1,2],
+            "mean" : [1.2] * 5, 
+            "lpl" : [1.2] * 5, 
+            "upl" : [1.2] * 5,
+            "outside_limits" : [True] * 5,  
+            "relative_to_mean" : [-1.0] * 4 + [1.0], 
+            "close_to_limits" : [False] * 5,
+            "special_cause_flag" : [True] * 5,
+        })
+        self.assertTrue(pandas_spc_x_calc(df,col,n_points).equals(expected))
 
 if __name__ == '__main__':
     unittest.main()

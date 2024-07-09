@@ -7,65 +7,73 @@ import unittest
 from nhspy_plotthedots.pandas_spc_calculations import two_in_three
 from nhspy_plotthedots.pandas_spc_calculations import part_of_two_in_three
 
+def compact(lst):
+    out = [] 
+    current = None
+    for item in lst:
+        if item != current:
+            current = item
+            out.append([current,1])
+        else:
+            out[-1][1] += 1
+    print(out)
 
 
 # Define tests
 # -------------------------------------------------------------------------
 class TestTwoInThree(unittest.TestCase):
-### rework test functions
-    def test_increasing_trend(self):
-        bool_values = [] 
-        values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
-        expected = [] 
-        self.assertEqual(two_in_three(close_to_limits = bool_values, relative_to_mean = values), expected)
 
-    def test_decreasing_trend(self):
-        bool_values = [] 
-        values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        expected = [] 
-        self.assertEqual(two_in_three(close_to_limits = bool_values, relative_to_mean = values), expected)
+    def test_large(self):
+        bool_values = [True] * 81 
+        values = [
+            -1,-1,-1,-1,-1,0,-1,-1,1,-1,0,-1,-1,0,0,-1,0,1,-1,1,-1,-1,1,0,-1,1,1,
+            0,-1,-1,0,-1,0,0,-1,1,0,0,-1,0,0,0,0,0,1,0,1,-1,0,1,0,0,1,1,
+            1,-1,-1,1,-1,0,1,-1,1,1,0,-1,1,0,0,1,0,1,1,1,-1,1,1,0,1,1,1
+        ]
+        expected = [True] * 5 + [False] * 47 + [True] * 3 + [False] * 16 + [True] * 3 + [False] * 4 + [True] * 3
+        self.assertEqual(two_in_three(bool_values, values), expected)  
 
-    def test_no_trend(self):
-        bool_values = [] 
-        values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
-        expected = [] 
-        self.assertEqual(two_in_three(close_to_limits = bool_values, relative_to_mean = values), expected)
+    def test_negative(self):
+        bool_values = [True] * 3 
+        values = [-1,-1,-1]
+        expected = [True] * 3 
+        self.assertEqual(two_in_three(bool_values, values), expected)  
+    
+    def test_relative_to_mean(self):
+        bool_values = [True] * 3 
+        values = [1,-1,1]
+        expected = [False] * 3 
+        self.assertEqual(two_in_three(bool_values, values), expected)  
+    
+    def test_close_to_limits(self):
+        bool_values = [False] * 3 
+        values = [1] * 3
+        expected = [False] * 3 
+        self.assertEqual(two_in_three(bool_values, values), expected)  
 
-    def test_small_input(self):
-        bool_values = [] 
-        values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        expected = [] 
-        self.assertEqual(two_in_three(close_to_limits = bool_values, relative_to_mean = values), expected)
-        
-    def test_large_input(self):
-        bool_values = [] 
-        values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
-        expected = [] 
-        self.assertEqual(two_in_three(close_to_limits = bool_values, relative_to_mean = values), expected)
-
-    def test_exact_seven_input(self):
-        bool_values = [] 
-        values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
-        expected = [] 
-        self.assertEqual(two_in_three(close_to_limits = bool_values, relative_to_mean = values), expected)
+    def test_unequal_sizes(self):
+        bool_values = [True,False,True,False] 
+        values = [1,-1]
+        expected = [False] * 4 
+        self.assertEqual(two_in_three(bool_values, values), expected)
 
     def test_null_boolean_input(self):
         bool_values = [] 
-        values = [1,2,3,4,5]
+        values = [1,1,1]
         expected = [] 
-        self.assertEqual(two_in_three(close_to_limits = bool_values, relative_to_mean = values), expected)
+        self.assertEqual(two_in_three(bool_values, values), expected)
 
     def test_null_value_input(self):
-        bool_values = [True, True, True] 
+        bool_values = [True, False]
         values = []
-        expected = [False,False,False] 
-        self.assertEqual(two_in_three(close_to_limits = bool_values, relative_to_mean = values), expected)
+        expected = [False, False]
+        self.assertEqual(two_in_three(bool_values, values), expected)
     
     def test_null_input(self):
         bool_values = [] 
         values = []
         expected = []
-        self.assertEqual(two_in_three(close_to_limits = bool_values, relative_to_mean = values), expected)
+        self.assertEqual(two_in_three(bool_values, values), expected)
         
 class PartOfTwoInThree(unittest.TestCase):
 
@@ -86,7 +94,6 @@ class PartOfTwoInThree(unittest.TestCase):
         values2 = [False, False, True,  True]
         expected = [False, False, False, True]
         self.assertEqual(part_of_two_in_three(values1, values2), expected)
-
 
     def test_null_input(self):
         values1 = []
