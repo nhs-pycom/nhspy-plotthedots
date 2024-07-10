@@ -185,7 +185,7 @@ def special_cause_flag(values: List[float],
 
     Parameters:
         - values (List[float]): List of float numbers
-        outside_limits (List[bool]): List of boolean values representing whether
+        - outside_limits (List[bool]): List of boolean values representing whether
         an element is outside the limits or not
         - close_to_limits (List[bool]): List of boolean values representing whether
         an element is close to a limit or not

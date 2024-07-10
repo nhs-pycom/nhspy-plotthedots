@@ -1,8 +1,41 @@
+# -------------------------------------------------------------------------
+# Copyright (c) 2023 NHS Python Community. All rights reserved.
+# Licensed under the MIT License. See license.txt in the project root for
+# license information.
+# -------------------------------------------------------------------------
+
+# FILE:           test_pandas_spc_x_calc.py
+
+# DESCRIPTION:    Tests on the pandas_scp_x_calc() function. Given a pandas DataFrame,
+#                  a string indicating the column name of the values to be analysed,,
+#                 and an optional integer representing the number of values after which
+#                 the mean and other calculations should be fixed. It returns a pandas
+#                 DataFrame with the same values and the Statistic Process Control (SPC) values.
+#                 The SCP values const of:
+#                   - mean: The mean of the input values
+#                   - lpl: The lower process limit of the input values
+#                   - upl: The upper process limit of the input values
+#                   - outside_limits: A boolean list representing whether a value is
+#                     outside the process limits
+#                   - relative_to_mean: A list representing the relative value of an
+#                     element to mean
+#                   - close_to_limits: A boolean list representing whether a value is
+#                     close to a limit or not
+#                   - special_cause_flag: A boolean list representing whether a value
+#                     is a special cause or not 'outside_limits' representing whether a
+#                    value is outside the process limits
+#
+# CONTRIBUTORS:   v.Morriss
+# CONTACT:        -
+# CREATED:        9 Jul 2024
+# VERSION:        0.0.1
+
 # Imports
 # -------------------------------------------------------------------------
 # Python:
 import unittest
 import math
+
 # 3rd party:
 import pandas as pd
 

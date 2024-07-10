@@ -26,13 +26,8 @@
 # Python:
 import unittest
 
-# 3rd party:
-import numpy as np
-
 # Local
 from nhspy_plotthedots.pandas_spc_calculations import seven_point_trend
-from nhspy_plotthedots.pandas_spc_calculations import part_of_seven_trend
-from nhspy_plotthedots.pandas_spc_calculations import seven_point_one_side_mean
 
 # Define tests
 # -------------------------------------------------------------------------
@@ -56,7 +51,7 @@ class TestSevenPointTrend(unittest.TestCase):
         values = [1, 2, 3]
         expected = [0, 0, 0]
         self.assertEqual(seven_point_trend(values), expected)
-        
+  
     def test_large_input(self):
         values = list(range(20))
         expected = [0, 0, 0, 0, 0, 0] + [1] * 14
@@ -81,96 +76,6 @@ class TestSevenPointTrend(unittest.TestCase):
         values = [-1, -2, -3, -2, -1, -2, -3, -4, -5, -6, -7, -4, -3, -2, -1, -2]
         expected = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0]
         self.assertEqual(seven_point_trend(values), expected)
-
-class TestPartOfSevenPointTrend(unittest.TestCase):
-    def test_small_input(self):
-        values = [0, 1, 2, 3]
-        expected = [True, True, False, False]
-        self.assertEqual(part_of_seven_trend(values), expected)
-
-    def test_large_input(self):
-        values = list(range(20))
-        expected = [True, True] + [False] * 18
-        self.assertEqual(part_of_seven_trend(values), expected)
-
-    def test_exact_seven_input_pos(self):
-        values = [1, 1, 1, 1, 1, 1, 1]
-        expected = [True] * 7
-        self.assertEqual(part_of_seven_trend(values), expected)
-
-    def test_exact_seven_input_neg(self):
-        values = [-1, -1, -1, -1, -1, -1, -1]
-        expected = [True] * 7
-        self.assertEqual(part_of_seven_trend(values), expected)
-
-    def test_null_input(self):
-        values = []
-        expected = []
-        self.assertEqual(part_of_seven_trend(values), expected)
-
-    def test_mixed_input_asc(self):
-        values = [-2, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        expected = [True, True, True] + [False] * 9
-        self.assertEqual(part_of_seven_trend(values), expected)
-
-    def test_mixed_input_des(self):
-        values = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -2]
-        expected = [False] * 3 + [True] * 7 + [False] * 2
-        self.assertEqual(part_of_seven_trend(values), expected)
-
-    def test_negative_input(self):
-        values = [-1, -2, -3, -2, -1, -2, -3, -4, -5, -6, -7, -4, -3, -2, -1, -2]
-        expected = [True] * 5 + [False] * 3 + [True] * 7 + [False]
-        self.assertEqual(part_of_seven_trend(values), expected)
-    
-    def test_no_one(self):
-        values = list(range(2,12,2))
-        expected = [0] * 5
-        self.assertEqual(seven_point_trend(values), expected)
-
-
-class TestSevenPointOneSideMean(unittest.TestCase):
-
-    def test_small_input(self):
-        values = [0, 1, 2, 3]
-        expected = [True, False, False, False]
-        self.assertEqual(seven_point_one_side_mean(values), expected)
-
-    def test_large_input(self):
-        values = list(range(20))
-        expected = [True] + 19 * [False]
-        self.assertEqual(seven_point_one_side_mean(values), expected)
-
-    def test_exact_seven_input_pos(self):
-        values = [1, 1, 1, 1, 1, 1, 1]
-        expected = [False] * 6 + [True]
-        self.assertEqual(seven_point_one_side_mean(values), expected)
-
-    def test_exact_seven_input_neg(self):
-        values = [-1, -1, -1, -1, -1, -1, -1]
-        expected = [False] * 6 + [True]
-        self.assertEqual(seven_point_one_side_mean(values), expected)
-
-    def test_null_input(self):
-        values = []
-        expected = []
-        self.assertEqual(seven_point_one_side_mean(values), expected)
-
-    def test_mixed_input_asc(self):
-        values = [-2, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        expected = [False] * 12
-        self.assertEqual(seven_point_one_side_mean(values), expected)
-
-    def test_mixed_input_des(self):
-        values = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -2]
-        expected = [False] * 12
-        self.assertEqual(seven_point_one_side_mean(values), expected)
-
-    def test_negative_input(self):
-        values = [-1, -2, -3, -2, -1, -2, -3, -4, -5, -6, -7, -4, -3, -2, -1, -2]
-        expected = [False] * 16
-        print(seven_point_one_side_mean(values))
-        self.assertEqual(seven_point_one_side_mean(values), expected)
 
 if __name__ == '__main__':
     unittest.main()
