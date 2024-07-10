@@ -32,6 +32,7 @@ from nhspy_plotthedots.pandas_spc_calculations import seven_point_trend
 # Define tests
 # -------------------------------------------------------------------------
 class TestSevenPointTrend(unittest.TestCase):
+    
     def test_increasing_trend(self):
         values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         expected = [0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
