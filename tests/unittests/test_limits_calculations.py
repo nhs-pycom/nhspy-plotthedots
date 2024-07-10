@@ -6,8 +6,8 @@
 # -------------------------------------------------------------------------
 
 # FILE:           test_limits_calculations.py
-# DESCRIPTION:    Tests on the limits_calculations() function. Given a
-#                 list of floats it returns a tuple of floats:
+# DESCRIPTION:    Tests for the limits_calculations() function. 
+#                 Given a list of floats (fix_values) it returns a tuple of floats:
 #                   - mean: The mean of the input values
 #                   - lpl: The lower process limit of the input values
 #                   - upl: The upper process limit of the input values

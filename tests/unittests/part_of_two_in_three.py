@@ -6,10 +6,10 @@
 # -------------------------------------------------------------------------
 
 # FILE:           test_part_of_two_in_three.py
-# DESCRIPTION:    Tests on the part_of_two_in_three() function. Given 
-#                 two boolean lists it uses the zip() function to iterate 
-#                 over the two input lists and applies a logical AND 
-#                 operation on the corresponding elements.  
+# DESCRIPTION:    Tests for the part_of_two_in_three() function. 
+#                 part_of_two_in_three(), given two boolean lists, uses zip()
+#                 to iterate over the two input lists and applies logical
+#                 AND to corresponding elements.  
 
 # CONTRIBUTORS:   v.Morriss
 # CONTACT:        -

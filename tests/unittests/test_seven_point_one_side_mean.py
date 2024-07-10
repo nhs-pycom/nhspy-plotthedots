@@ -6,10 +6,11 @@
 
 # FILE:           test_seven_point_one_side_mean.py
 
-# DESCRIPTION:    Tests for the seven_point_one_side_mean() function. Given a list of floats representing 
-#                 each entries' relation to the mean (1.0 = above, 0.0 = mean, -1.0 = below), it returns a 
-#                 boolean list with each entry representing if a number is the seventh number above/below 
-#                 the mean.
+# DESCRIPTION:    Tests for the seven_point_one_side_mean() function. 
+#                 Given a list of floats representing each entries'
+#                 relation to the mean (1.0 = above, 0.0 = mean, -1.0 = below),  
+#                 it returns a boolean list with each entry representing if a 
+#                 number is the seventh number above/below the mean.
 #
 # CONTRIBUTORS:   v.Morriss
 # CONTACT:        -

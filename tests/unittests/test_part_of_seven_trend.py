@@ -6,17 +6,11 @@
 # -------------------------------------------------------------------------
 
 # FILE:           test_part_of_seven.py
-# DESCRIPTION:    Tests on the limits_calculations() function. Given a
-#                 list of floats it checks if there is a trend of 7 
-#                 elements where at least one element has an absolute value 
-#                 of 1.
-#                   
-#
-#                 These tests cover different scenarios such as an increasing trend,
-#                 a decreasing trend, a small input, a large input, a perfect trend
-#                 of 1's, a perfect trend of -1's, a mixed ascending input, a mixed 
-#                 descending input, a parabolic input, an input with no ones', and 
-#                 a null input.           
+
+# DESCRIPTION:    Tests for the limits_calculations() function.
+#                 Given a list of floats limits_calculations() checks if 
+#                 there is a trend of 7 elements where at least one element 
+#                 has an absolute value of 1.         
 
 # CONTRIBUTORS:   v.Morriss
 # CONTACT:        -

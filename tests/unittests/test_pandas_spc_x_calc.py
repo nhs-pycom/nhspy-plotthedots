@@ -7,7 +7,7 @@
 # FILE:           test_pandas_spc_x_calc.py
 
 # DESCRIPTION:    Tests on the pandas_scp_x_calc() function. Given a pandas DataFrame,
-#                  a string indicating the column name of the values to be analysed,,
+#                 a string indicating the column name of the values to be analysed,
 #                 and an optional integer representing the number of values after which
 #                 the mean and other calculations should be fixed. It returns a pandas
 #                 DataFrame with the same values and the Statistic Process Control (SPC) values.

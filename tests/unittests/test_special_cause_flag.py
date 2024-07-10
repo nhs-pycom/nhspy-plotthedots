@@ -7,7 +7,7 @@
 
 # FILE:           test_special_cause_flag.py
 
-# DESCRIPTION:    Tests on the special_cause_flag() function. 
+# DESCRIPTION:    Tests for the special_cause_flag() function. 
 #                 special_cause_flag() checks if an element is a special
 #                 cause based on 4 conditions: 
 #                   1. It is outside the limits
@@ -17,6 +17,7 @@
 #                      of elements to mean is 1
 #                   4. It is part of a trend of 3 elements where at least 2 elements are close
 #                      to limits and sum of relative to mean is 3
+
 #                 Parameters:
 #                   - values (List[float]): List of float numbers
 #                   - outside_limits (List[bool]): List of boolean values representing whether
