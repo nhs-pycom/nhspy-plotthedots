@@ -185,7 +185,7 @@ def special_cause_flag(values: List[float],
 
     Parameters:
         - values (List[float]): List of float numbers
-        outside_limits (List[bool]): List of boolean values representing whether
+        - outside_limits (List[bool]): List of boolean values representing whether
         an element is outside the limits or not
         - close_to_limits (List[bool]): List of boolean values representing whether
         an element is close to a limit or not
@@ -210,10 +210,8 @@ def limits_calculations(fix_values: List[float]) -> Tuple[float, float, float, f
     Calculates the limits for a given list of values.
     
     Parameters:
-        - values (List[float]): The list of values for which the special cause
+        - fix_values (List[float]): The list of values for which the special cause
         limits need to be calculated.
-        - fix_after_n_points (Optional[int]): The number of values after which
-        the mean and other calculations should be fixed.
     
     Returns:
         Tuple[float, float, float, float]: A tuple containing the following values:

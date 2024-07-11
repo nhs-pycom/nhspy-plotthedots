@@ -26,16 +26,13 @@
 # Python:
 import unittest
 
-# 3rd party:
-import numpy as np
-
 # Local
 from nhspy_plotthedots.pandas_spc_calculations import seven_point_trend
 
 # Define tests
 # -------------------------------------------------------------------------
 class TestSevenPointTrend(unittest.TestCase):
-
+    
     def test_increasing_trend(self):
         values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         expected = [0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
@@ -55,7 +52,7 @@ class TestSevenPointTrend(unittest.TestCase):
         values = [1, 2, 3]
         expected = [0, 0, 0]
         self.assertEqual(seven_point_trend(values), expected)
-        
+  
     def test_large_input(self):
         values = list(range(20))
         expected = [0, 0, 0, 0, 0, 0] + [1] * 14

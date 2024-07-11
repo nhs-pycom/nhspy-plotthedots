@@ -7,7 +7,7 @@
 
 # FILE:           test_part_of_seven_trend.py
 
-# DESCRIPTION:    Tests on the part_of_seven_trend() function. Check if there
+# DESCRIPTION:    Tests on the part_of_seven_trend() function. Checks if there
 #                 is a trend of 7 elements where at least one element has an absolute value of 1.
 #                 It returns a A list of boolean values representing whether there is
 #                 a trend of 7 elements where at least one element has an absolute
@@ -73,6 +73,26 @@ class TestSevenPointTrend(unittest.TestCase):
         expected = [True] * 5 + [False] * 3 + [True] * 7 + [False]
         self.assertEqual(part_of_seven_trend(values), expected)
 
+    def test_perfect_pos(self):
+        values = [1, 1, 1, 1, 1, 1, 1]
+        expected = [True] * 7
+        self.assertEqual(part_of_seven_trend(values), expected)
+
+    def test_perfect_neg(self):
+        values = [-1, -1, -1, -1, -1, -1, -1]
+        expected = [True] * 7
+        self.assertEqual(part_of_seven_trend(values), expected)
+
+    def test_no_one(self):
+        values = list(range(2,12,2))
+        expected = [False] * 5
+        self.assertEqual(part_of_seven_trend(values), expected)
+
+    def test_parabola(self):
+        values = [0,1,6,9,10,9,6,1,0]
+        expected = [True] * 8 + [False]
+        self.assertEqual(part_of_seven_trend(values), expected)
 
 if __name__ == "__main__":
     unittest.main()
+
